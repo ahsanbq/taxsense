@@ -6,7 +6,7 @@ export default function PricingPlansSection() {
   const packages = [
     {
       title: "Trade License",
-      price: "৳5K",
+      price: "Starting from ৳5K",
       priceNote: "(Starting Price)",
       description:
         "Complete trade license solutions for various business types",
@@ -21,7 +21,7 @@ export default function PricingPlansSection() {
     },
     {
       title: "Company Registration",
-      price: "৳15K",
+      price: "Starting from ৳15K",
       priceNote: "(Starting Price)",
       description:
         "Full company registration services for different business structures",
@@ -36,7 +36,7 @@ export default function PricingPlansSection() {
     },
     {
       title: "IRC & ERC",
-      price: "৳15K",
+      price: "Starting from ৳15K",
       priceNote: "(Starting Price)",
       description:
         "Complete IRC & ERC services with comprehensive documentation",
