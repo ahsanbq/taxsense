@@ -99,7 +99,7 @@ export const translations = {
       plans: [
         {
           title: "Trade License",
-          price: "৳15,000",
+          price: "৳5000",
           features: [
             "Complete documentation",
             "Legal compliance",
@@ -111,7 +111,7 @@ export const translations = {
         },
         {
           title: "Company Registration",
-          price: "৳25,000",
+          price: "৳15,000",
           features: [
             "End-to-end registration",
             "Legal documentation",
@@ -123,7 +123,7 @@ export const translations = {
         },
         {
           title: "IRC & ERC",
-          price: "৳20,000",
+          price: "৳15,000",
           features: [
             "Import/Export certificates",
             "Documentation support",

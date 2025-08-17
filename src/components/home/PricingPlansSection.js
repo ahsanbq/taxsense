@@ -6,7 +6,7 @@ export default function PricingPlansSection() {
   const packages = [
     {
       title: "Trade License",
-      price: "Starting from ৳5K",
+      price: "৳5K",
       priceNote: "(Starting Price)",
       description:
         "Complete trade license solutions for various business types",
@@ -21,7 +21,7 @@ export default function PricingPlansSection() {
     },
     {
       title: "Company Registration",
-      price: "Starting from ৳15K",
+      price: "৳15K",
       priceNote: "(Starting Price)",
       description:
         "Full company registration services for different business structures",
@@ -36,7 +36,7 @@ export default function PricingPlansSection() {
     },
     {
       title: "IRC & ERC",
-      price: "Starting from ৳15K",
+      price: "৳15K",
       priceNote: "(Starting Price)",
       description:
         "Complete IRC & ERC services with comprehensive documentation",
@@ -84,6 +84,12 @@ export default function PricingPlansSection() {
                   <h3 className="text-2xl font-bold text-white mb-2">
                     {pkg.title}
                   </h3>
+                  {/* Starting From Badge */}
+                  <div className="mb-3">
+                    <span className="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider">
+                      Starting From
+                    </span>
+                  </div>
                   <div className="mb-4">
                     <span className="text-4xl font-bold text-white">
                       {pkg.price}
@@ -114,7 +120,7 @@ export default function PricingPlansSection() {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-white hover:bg-gray-100 text-black shadow-lg hover:shadow-xl">
+                <button className="w-full py-3 px-6 rounded-lg font-semibold cursor-pointer transition-all duration-300 bg-white hover:bg-gray-100 text-black shadow-lg hover:shadow-xl">
                   {pkg.cta}
                 </button>
               </div>
