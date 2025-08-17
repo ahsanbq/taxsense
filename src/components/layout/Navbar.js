@@ -24,30 +24,29 @@ const Navbar = () => {
               />
             </Link>
           </div>
-
-          {/* Desktop Navigation */}
+          {/* //desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors"
             >
               {t.nav.home}
             </Link>
             <Link
               href="/about"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors"
             >
               {t.nav.about}
             </Link>
             <Link
               href="/services"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors"
             >
               {t.nav.services}
             </Link>
             <Link
               href="/contact"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors"
             >
               {t.nav.contact}
             </Link>
@@ -55,7 +54,7 @@ const Navbar = () => {
             {/* Language Toggle Button */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-2 bg-primary text-red-600 px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-600 transition-colors"
+              className="flex items-center cursor-pointer space-x-2 bg-primary text-red-600 px-3 py-2 rounded-md text-md font-bold hover:bg-primary-600 transition-colors"
               title={
                 language === "en" ? "Switch to Bengali" : "Switch to English"
               }
@@ -148,25 +147,25 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
           <Link
             href="/"
-            className="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            className="navbar-link text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
           >
             {t.nav.home}
           </Link>
           <Link
             href="/about"
-            className="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            className="navbar-link text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
           >
             {t.nav.about}
           </Link>
           <Link
             href="/services"
-            className="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            className="navbar-link text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
           >
             {t.nav.services}
           </Link>
           <Link
             href="/contact"
-            className="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+            className="navbar-link text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
           >
             {t.nav.contact}
           </Link>

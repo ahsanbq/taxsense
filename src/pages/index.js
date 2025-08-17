@@ -4,6 +4,7 @@ import ServicesSection from "../components/home/ServicesSection";
 import WhoWeAreSection from "../components/home/WhoWeAreSection";
 import PricingPlansSection from "../components/home/PricingPlansSection";
 import ClientsSection from "../components/home/ClientsSection";
+import FAQSection from "../components/home/FAQSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <WhoWeAreSection />
       <PricingPlansSection />
       <ClientsSection />
+      <FAQSection />
     </Layout>
   );
 }

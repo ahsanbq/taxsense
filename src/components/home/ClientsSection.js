@@ -2,55 +2,55 @@ import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function ClientsSection() {
   const { t } = useLanguage();
-  // Sample client logos - you can replace these with actual client logo URLs
+  // Real client logos from public/clients folder
   const clients = [
     {
-      name: "TechCorp",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=TechCorp",
+      name: "Bank Asia Limited",
+      logo: "/clients/Bank-Asia-Limited-Logo-Vector.svg-.png",
     },
     {
-      name: "BusinessPro",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=BusinessPro",
+      name: "Uni Logo",
+      logo: "/clients/cropped-Uni1logo_for_web.jpg",
     },
     {
-      name: "StartupHub",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=StartupHub",
+      name: "Green Logo Company",
+      logo: "/clients/logo_green-1.png",
     },
     {
-      name: "GlobalTrade",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=GlobalTrade",
+      name: "Client 1",
+      logo: "/clients/327439728_1662014604217252_3882132783104307807_n.jpg",
     },
     {
-      name: "InnovateInc",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=InnovateInc",
+      name: "Client 2",
+      logo: "/clients/346476980_3462942090647371_7842320966996879783_n.jpg",
     },
     {
-      name: "FutureTech",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=FutureTech",
+      name: "Client 3",
+      logo: "/clients/405467726_122094280034150701_7439153767348733036_n.jpg",
     },
     {
-      name: "EliteGroup",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=EliteGroup",
+      name: "Standard Size Logo",
+      logo: "/clients/250x60.png",
     },
     {
-      name: "ProSolutions",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=ProSolutions",
+      name: "R Company",
+      logo: "/clients/R.jpg",
     },
     {
-      name: "NextGen",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=NextGen",
+      name: "AAA Corporation",
+      logo: "/clients/aaa.jpeg",
     },
     {
-      name: "MarketLeaders",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=MarketLeaders",
+      name: "Download Company",
+      logo: "/clients/download.png",
     },
     {
-      name: "SuccessPartners",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=SuccessPartners",
+      name: "Images Corp",
+      logo: "/clients/images.jpeg",
     },
     {
-      name: "VisionCorp",
-      logo: "https://via.placeholder.com/150x80/e5e7eb/374151?text=VisionCorp",
+      name: "WW Enterprise",
+      logo: "/clients/ww.jpg",
     },
   ];
 
@@ -81,12 +81,16 @@ export default function ClientsSection() {
             {duplicatedClients.map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="flex-shrink-0 w-40 h-20 flex items-center justify-center bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 group"
+                className="flex-shrink-0 w-40 h-20 flex items-center justify-center hover:shadow-md transition-shadow duration-300 group p-4"
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  className="max-w-full max-h-full object-contain scale-150 transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-105"
+                  style={{
+                    maxWidth: "120px",
+                    maxHeight: "60px",
+                  }}
                 />
               </div>
             ))}

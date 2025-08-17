@@ -4,7 +4,7 @@ import { useLanguage } from "../../contexts/LanguageContext";
 export default function WhoWeAreSection() {
   const { t } = useLanguage();
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Text Content */}
@@ -69,7 +69,7 @@ export default function WhoWeAreSection() {
               {t.whoWeAre.features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-xl border border-primary/10"
+                  className="bg-red-200 p-6 rounded-xl border border-primary/10"
                 >
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                     <svg

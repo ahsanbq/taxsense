@@ -1,4 +1,5 @@
 import { useLanguage } from "../../contexts/LanguageContext";
+import { useRouter } from "next/router";
 
 export default function ServicesSection() {
   const { t } = useLanguage();
@@ -166,7 +167,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24  bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
@@ -182,7 +183,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Grid layout - 8 cards in 2x4 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 border-t border-neutral-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 border-t border-red-200 ">
           {t.services.items.map((service, index) => (
             <ServiceFeature
               key={service.title}
@@ -194,7 +195,7 @@ export default function ServicesSection() {
 
         {/* CTA */}
         <div className="text-center mt-20">
-          <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-8 rounded-2xl border border-primary/10">
+          <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-8 rounded-2xl border border-black">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Ready to Transform Your Ideas?
             </h3>
@@ -245,7 +246,18 @@ export default function ServicesSection() {
 }
 
 const ServiceFeature = ({ service, index }) => {
+  const router = useRouter();
   const isLeftmostColumn = index % 4 === 0;
+
+  // Function to handle navigation
+  const handleReadMore = () => {
+    // Convert service title to URL-friendly format
+    const serviceName = service.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric with hyphens
+      .replace(/(^-|-$)/g, ""); // Remove leading/trailing hyphens
+    router.push(`/service/${serviceName}/view`);
+  };
 
   // Define icons based on service titles
   const getServiceIcon = (title) => {
@@ -371,9 +383,32 @@ const ServiceFeature = ({ service, index }) => {
           {service.title}
         </span>
       </div>
-      <p className="text-sm text-neutral-600 relative z-10 px-6 lg:px-4 xl:px-6">
+      <p className="text-sm text-neutral-600 relative z-10 px-6 lg:px-4 xl:px-6 mb-4">
         {service.description}
       </p>
+
+      {/* Read More Button */}
+      <div className="mt-auto px-6 lg:px-4 xl:px-6 relative z-10 ">
+        <button
+          onClick={handleReadMore}
+          className="text-primary hover:text-primary-dark  text-sm font-medium cursor-pointer inline-flex items-center group transition-colors duration-200"
+        >
+          Read More
+          <svg
+            className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };

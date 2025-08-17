@@ -144,3 +144,23 @@ body {
 .animate-slide:hover {
   animation-play-state: paused;
 }
+
+/* Ensure no active background on navigation links */
+nav a:active,
+nav a:focus,
+nav button:active,
+nav button:focus {
+  background-color: transparent !important;
+}
+
+/* Override any Next.js Link active states */
+.navbar-link:active,
+.navbar-link:focus {
+  background-color: transparent !important;
+}
+
+/* Ensure navigation links don't get unwanted backgrounds */
+nav [class*="text-gray"]:active,
+nav [class*="text-gray"]:focus {
+  background-color: transparent !important;
+}

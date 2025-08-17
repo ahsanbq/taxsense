@@ -84,9 +84,9 @@ export const translations = {
         "Personalized Service",
       ],
       stats: [
-        { number: "500+", label: "Happy Clients" },
-        { number: "1000+", label: "Projects Completed" },
-        { number: "5+", label: "Years Experience" },
+        { number: "1,800", label: "Tax Clients" },
+        { number: "100", label: "Company Registered" },
+        { number: "600", label: "License Prepared" },
       ],
       cta: "Learn More About Us",
     },
@@ -140,9 +140,9 @@ export const translations = {
       subtitle: "Trusted by Industry Leaders",
       title: "Our Valued Clients",
       stats: [
-        { number: "500+", label: "Happy Clients" },
-        { number: "1000+", label: "Projects Completed" },
-        { number: "99%", label: "Success Rate" },
+        { number: "1,800", label: "Tax Clients" },
+        { number: "2,100", label: "Happy Clients" },
+        { number: "600", label: "License Prepared" },
       ],
     },
     // Footer
@@ -264,9 +264,9 @@ export const translations = {
         "ব্যক্তিগতকৃত সেবা",
       ],
       stats: [
-        { number: "৫০০+", label: "সন্তুষ্ট ক্লায়েন্ট" },
-        { number: "১০০০+", label: "সম্পন্ন প্রকল্প" },
-        { number: "৫+", label: "বছরের অভিজ্ঞতা" },
+        { number: "১,৮০০", label: "ট্যাক্স ক্লায়েন্ট" },
+        { number: "১০০", label: "কোম্পানি নিবন্ধিত" },
+        { number: "৬০০", label: "লাইসেন্স প্রস্তুত" },
       ],
       cta: "আমাদের সম্পর্কে আরও জানুন",
     },
@@ -320,9 +320,9 @@ export const translations = {
       subtitle: "ইন্ডাস্ট্রি লিডারদের দ্বারা বিশ্বস্ত",
       title: "আমাদের মূল্যবান ক্লায়েন্টগণ",
       stats: [
-        { number: "৫০০+", label: "সন্তুষ্ট ক্লায়েন্ট" },
-        { number: "১০০০+", label: "সম্পন্ন প্রকল্প" },
-        { number: "৯৯%", label: "সাফল্যের হার" },
+        { number: "১,৮০০", label: "ট্যাক্স ক্লায়েন্ট" },
+        { number: "২,১০০", label: "সন্তুষ্ট ক্লায়েন্ট" },
+        { number: "৬০০", label: "লাইসেন্স প্রস্তুত" },
       ],
     },
     // Footer

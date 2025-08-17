@@ -8,8 +8,7 @@ export default function HeroSection() {
   // Hero slides data with different content for each image
   const heroSlides = [
     {
-      image:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80",
+      image: "Hero/hero.png",
       title: "Transform Your Business",
       subtitle:
         "Innovative solutions that drive growth and success in today's competitive market.",
@@ -56,7 +55,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-[66vh] min-h-[500px] overflow-hidden group bg-gray-900">
+    <section className="relative h-[95vh] min-h-[550px] overflow-hidden group bg-gray-900">
       {/* Background Images */}
       {heroSlides.map((slide, index) => (
         <div
@@ -75,7 +74,8 @@ export default function HeroSection() {
       ))}
 
       {/* Content Container */}
-      <div className="relative z-30 h-full flex items-center">
+
+      <div className="relative z-30 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl lg:max-w-3xl">
             {/* Animated Content */}
@@ -116,53 +116,6 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
-
-      {/* Navigation Arrows (Optional) */}
-      <button
-        onClick={() =>
-          setCurrentSlide(
-            (prev) => (prev - 1 + heroSlides.length) % heroSlides.length
-          )
-        }
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 text-white hover:text-primary transition-colors duration-300 opacity-0 hover:opacity-100 group-hover:opacity-100"
-        aria-label="Previous slide"
-      >
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-
-      <button
-        onClick={() =>
-          setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-        }
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 text-white hover:text-primary transition-colors duration-300 opacity-0 hover:opacity-100 group-hover:opacity-100"
-        aria-label="Next slide"
-      >
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
     </section>
   );
 }
