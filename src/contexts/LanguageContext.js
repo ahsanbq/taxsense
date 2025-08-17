@@ -279,7 +279,7 @@ export const translations = {
       plans: [
         {
           title: "ট্রেড লাইসেন্স",
-          price: "৳১৫,০০০",
+          price: "৳৫০০০",
           features: [
             "সম্পূর্ণ ডকুমেন্টেশন",
             "আইনি সম্মতি",
@@ -291,7 +291,7 @@ export const translations = {
         },
         {
           title: "কোম্পানি নিবন্ধন",
-          price: "৳২৫,০০০",
+          price: "৳১৫,০০০",
           features: [
             "শুরু থেকে শেষ পর্যন্ত নিবন্ধন",
             "আইনি ডকুমেন্টেশন",
@@ -303,7 +303,7 @@ export const translations = {
         },
         {
           title: "IRC ও ERC",
-          price: "৳২০,০০০",
+          price: "৳১৫,০০০",
           features: [
             "আমদানি/রপ্তানি সার্টিফিকেট",
             "ডকুমেন্টেশন সাপোর্ট",
