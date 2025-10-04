@@ -105,7 +105,7 @@ export default function Services() {
   const { t } = useLanguage();
 
   // Get actual services data from context
-  const services = t.services.items;
+  const services = t("services");
 
   // Service navigation mapping
   const serviceNavigationMap = {
@@ -395,10 +395,10 @@ export default function Services() {
       <section className="bg-gradient-to-r from-primary to-primary-dark text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {t.services_page_title}
+            {t("services_page_title")}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            {t.services_page_subtitle}
+            {t("services_page_subtitle")}
           </p>
         </div>
       </section>
@@ -408,7 +408,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              {t.our_professional_services}
+              {t("our_professional_services")}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Discover our comprehensive range of professional services designed
@@ -435,15 +435,15 @@ export default function Services() {
       <section className="py-16 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t.services_cta_title}
+            {t("services_cta_title")}
           </h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            {t.services_cta_subtitle}
+            {t("services_cta_subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
-                {t.get_quote || "Get Quote"}
+                {t("get_quote") || "Get Quote"}
               </button>
             </Link>
             <Link href="/about">

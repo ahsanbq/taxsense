@@ -10,15 +10,15 @@ export default function WhoWeAreSection() {
           {/* Left Side - Text Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+              <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium">
                 {t.whoWeAre.title}
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
                 {t.whoWeAre.subtitle}
               </h2>
             </div>
 
-            <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-lg text-black leading-relaxed">
               <p>{t.whoWeAre.description}</p>
             </div>
 
@@ -43,7 +43,7 @@ export default function WhoWeAreSection() {
               </Link>
 
               <Link href="/contact">
-                <button className="border-2 border-primary/20 hover:border-primary/40 bg-transparent hover:bg-primary/5 text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center group">
+                <button className="border-2 border-black hover:border-primary bg-transparent hover:bg-primary/5 text-black hover:text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center group">
                   Get In Touch
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
@@ -69,11 +69,12 @@ export default function WhoWeAreSection() {
               {t.whoWeAre.features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-red-200 p-6 rounded-xl border border-primary/10"
+                  className="p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                  style={{ backgroundColor: "#A61E2A" }}
                 >
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                     <svg
-                      className="w-6 h-6 text-primary"
+                      className="w-6 h-6 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -86,29 +87,80 @@ export default function WhoWeAreSection() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-white mb-2">
                     {feature}
                   </h3>
                 </div>
               ))}
             </div>
 
-            {/* Stats */}
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <div className="flex items-center justify-between">
-                {t.whoWeAre.stats.map((stat, index) => (
-                  <>
+            {/* Stats - Redesigned for solid, professional look */}
+            <div className="bg-gradient-to-br from-black via-gray-900 to-black border border-gray-700 rounded-xl shadow-lg overflow-hidden">
+              <div className="bg-primary p-4 text-center">
+                <h3 className="text-lg font-semibold text-white">
+                  Our Track Record
+                </h3>
+              </div>
+              <div className="p-6">
+                <div className="grid grid-cols-3 gap-4">
+                  {t.whoWeAre.stats.map((stat, index) => (
                     <div key={index} className="text-center">
-                      <div className="text-2xl font-bold text-primary">
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg border border-white/30">
+                        {index === 0 && (
+                          <svg
+                            className="w-6 h-6 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                            />
+                          </svg>
+                        )}
+                        {index === 1 && (
+                          <svg
+                            className="w-6 h-6 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                            />
+                          </svg>
+                        )}
+                        {index === 2 && (
+                          <svg
+                            className="w-6 h-6 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M13 10V3L4 14h7v7l9-11h-7z"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                      <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-yellow-300 via-yellow-100 to-white bg-clip-text mb-1">
                         {stat.number}
                       </div>
-                      <div className="text-sm text-gray-600">{stat.label}</div>
+                      <div className="text-xs font-medium text-transparent bg-gradient-to-r from-yellow-200 to-white bg-clip-text uppercase tracking-widest">
+                        {stat.label}
+                      </div>
                     </div>
-                    {index < t.whoWeAre.stats.length - 1 && (
-                      <div className="w-px h-12 bg-gray-300"></div>
-                    )}
-                  </>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

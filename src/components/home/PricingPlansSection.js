@@ -56,13 +56,13 @@ export default function PricingPlansSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
             {t.pricing.subtitle}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             {t.pricing.title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             {t.pricing.description}
           </p>
         </div>
@@ -80,21 +80,31 @@ export default function PricingPlansSection() {
             >
               <div className="p-8">
                 {/* Header */}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                <div className="text-center mb-8 min-h-[120px] flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-white mb-4">
                     {pkg.title}
                   </h3>
-                  {/* Starting From Badge */}
-                  <div className="mb-3">
-                    <span className="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider">
-                      Starting From
-                    </span>
-                  </div>
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold text-white">
-                      {pkg.price}
-                    </span>
-                  </div>
+                  {/* Pricing Display */}
+                  {index === 0 ? (
+                    <div>
+                      <span className="text-4xl font-bold text-white">
+                        Negotiable
+                      </span>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="mb-3">
+                        <span className="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider">
+                          Starting From
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-4xl font-bold text-white">
+                          {pkg.price}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Features */}
@@ -121,7 +131,7 @@ export default function PricingPlansSection() {
 
                 {/* CTA Button */}
                 <button className="w-full py-3 px-6 rounded-lg font-semibold cursor-pointer transition-all duration-300 bg-white hover:bg-gray-100 text-black shadow-lg hover:shadow-xl">
-                  {pkg.cta}
+                  Get Quote
                 </button>
               </div>
             </div>
@@ -130,11 +140,11 @@ export default function PricingPlansSection() {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-8 rounded-2xl border border-primary/10 max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-8 rounded-2xl border border-black max-w-4xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Need a Custom Solution?
             </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-black mb-8 max-w-2xl mx-auto">
               Can't find the perfect package? We offer customized solutions
               tailored to your specific business requirements.
             </p>
@@ -160,7 +170,7 @@ export default function PricingPlansSection() {
               </Link>
 
               <Link href="/contact">
-                <button className="group border-2 border-primary/20 hover:border-primary/40 bg-transparent hover:bg-primary/5 text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                <button className="group border-2 border-black hover:border-primary bg-transparent hover:bg-primary/5 text-black hover:text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
                   Request Custom Quote
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"

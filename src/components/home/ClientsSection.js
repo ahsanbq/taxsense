@@ -78,7 +78,7 @@ export default function ClientsSection() {
               src="/clients/hero.png"
               alt="Taxsense Clients Hero"
               className="max-w-full h-auto mx-auto rounded-xl shadow-lg"
-              style={{ maxHeight: "300px" }}
+              style={{ maxHeight: "450px" }}
             />
             {/* Optional overlay for better text readability if needed */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
@@ -153,15 +153,15 @@ export default function ClientsSection() {
             {duplicatedClients.map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="flex-shrink-0 w-40 h-20 flex items-center justify-center hover:shadow-md transition-shadow duration-300 group p-4"
+                className="flex-shrink-0 w-40 h-40 flex items-center justify-center hover:shadow-md transition-shadow duration-300 group p-4"
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
                   className="max-w-full max-h-full object-contain scale-150 transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-105"
                   style={{
-                    maxWidth: "120px",
-                    maxHeight: "60px",
+                    maxWidth: "190px",
+                    maxHeight: "100px",
                   }}
                 />
               </div>

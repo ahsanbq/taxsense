@@ -4,7 +4,7 @@ import { useLanguage } from "../../contexts/LanguageContext";
 const Footer = () => {
   const { t } = useLanguage();
   return (
-    <footer className="bg-[#700000] text-white">
+    <footer className="bg-[#700000] text-white" role="contentinfo">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Taxsense Ltd.
+                TaxSense Ltd.
               </h3>
               <p className="text-white/90 leading-relaxed max-w-md">
                 {t.footer.about.description}
@@ -20,11 +20,17 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-            <div className="flex space-x-4">
+            <div
+              className="flex space-x-4"
+              role="list"
+              aria-label="Social media links"
+            >
               <a
-                href="#"
+                href="https://www.facebook.com/taxsensebd"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="Facebook"
+                aria-label="Follow TaxSense Ltd on Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <svg
                   className="w-5 h-5 text-white group-hover:scale-110 transition-transform"
@@ -36,9 +42,11 @@ const Footer = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/taxsensebd"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="LinkedIn"
+                aria-label="Follow TaxSense Ltd on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <svg
                   className="w-5 h-5 text-white group-hover:scale-110 transition-transform"
@@ -52,7 +60,7 @@ const Footer = () => {
               <a
                 href="mailto:taxsenselimited@gmail.com"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="Email"
+                aria-label="Send email to TaxSense Ltd"
               >
                 <svg
                   className="w-5 h-5 text-white group-hover:scale-110 transition-transform"
@@ -70,9 +78,11 @@ const Footer = () => {
               </a>
 
               <a
-                href="http://www.taxsenselimited.com"
+                href="https://www.taxsense.com.bd"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="Website"
+                aria-label="Visit TaxSense Ltd website"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <svg
                   className="w-5 h-5 text-white group-hover:scale-110 transition-transform"
@@ -132,103 +142,138 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Contact Info Bar */}
+        {/* Contact Info Bar with Local SEO */}
         <div className="mt-12 pt-8 border-t border-white/20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+          <address className="not-italic">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div
+                className="flex items-center space-x-3"
+                itemScope
+                itemType="http://schema.org/PostalAddress"
+              >
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white/80 text-sm">Address</p>
+                  <p className="text-white text-sm" itemProp="streetAddress">
+                    {t.footer.contact.address}
+                  </p>
+                  <span itemProp="addressLocality" className="sr-only">
+                    Dhaka
+                  </span>
+                  <span itemProp="addressCountry" className="sr-only">
+                    Bangladesh
+                  </span>
+                </div>
               </div>
-              <div>
-                <p className="text-white/80 text-sm">Address</p>
-                <p className="text-white text-sm">{t.footer.contact.address}</p>
-              </div>
-            </div>
 
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white/80 text-sm">Phone</p>
+                  <a
+                    href={`tel:${t.footer.contact.phone}`}
+                    className="text-white text-sm hover:text-white/80 transition-colors"
+                  >
+                    {t.footer.contact.phone}
+                  </a>
+                </div>
               </div>
-              <div>
-                <p className="text-white/80 text-sm">Phone</p>
-                <p className="text-white text-sm">{t.footer.contact.phone}</p>
-              </div>
-            </div>
 
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white/80 text-sm">Email</p>
+                  <a
+                    href={`mailto:${t.footer.contact.email}`}
+                    className="text-white text-sm hover:text-white/80 transition-colors"
+                  >
+                    {t.footer.contact.email}
+                  </a>
+                </div>
               </div>
-              <div>
-                <p className="text-white/80 text-sm">Email</p>
-                <p className="text-white text-sm">{t.footer.contact.email}</p>
-              </div>
-            </div>
 
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9"
-                  />
-                </svg>
-              </div>
-              <div>
-                <p className="text-white/80 text-sm">Website</p>
-                <p className="text-white text-sm">{t.footer.contact.website}</p>
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white/80 text-sm">Website</p>
+                  <a
+                    href="https://www.taxsense.com.bd"
+                    className="text-white text-sm hover:text-white/80 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.footer.contact.website}
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </address>
         </div>
       </div>
 

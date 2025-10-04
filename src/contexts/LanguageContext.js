@@ -18,7 +18,7 @@ export const translations = {
       title: "Professional Tax & Business Solutions",
       subtitle: "Expert guidance for your financial success",
       description:
-        "Comprehensive tax advisory, VAT consultancy, and business solutions tailored to meet your specific needs. Trust our experienced professionals to handle your financial requirements.",
+        "Comprehensive tax advisory, VAT consultancy, Company Documentation and business solutions tailored to meet your specific needs. Trust our experienced professionals to handle your financial requirements.",
       cta: "Get Started",
       learnMore: "Learn More",
     },
@@ -30,44 +30,54 @@ export const translations = {
         "We provide a wide range of professional services to help your business thrive and comply with all regulatory requirements.",
       items: [
         {
-          title: "VAT Consultancy",
-          description:
-            "Experienced VAT specialists providing precise information, registration procedures, and ensuring all VAT paperwork is up to date.",
-        },
-        {
           title: "Tax Advisory",
           description:
-            "Comprehensive taxation solutions for both individuals and corporate clients with professional expertise ahead of competition.",
+            "Comprehensive taxation solutions for both individuals and corporate clients with professional expertise and strategic planning.",
         },
         {
-          title: "Business Audit",
+          title: "VAT Consultancy",
           description:
-            "Financial audit services identifying potential risks and areas for improvement in internal accounting control processes.",
-        },
-        {
-          title: "Business Advisory",
-          description:
-            "Business strategy and planning, operational reviews, board effectiveness, benchmarking and comprehensive advisory services.",
+            "Expert VAT specialists providing precise information, registration procedures, and ensuring all VAT compliance requirements are met.",
         },
         {
           title: "Company Registration",
           description:
-            "Making business startup easy by removing unnecessary fees, handling paperwork, legal complexities and providing access to startup ecosystems.",
+            "Complete company registration services including Limited Company, Partnership Firm, Foundation, Society and other business structures.",
         },
         {
-          title: "Trade License",
+          title: "Trade License & Trademark Registration",
           description:
-            "Complete assistance in obtaining trade licenses for your business operations with all necessary documentation and legal requirements.",
+            "Comprehensive assistance in obtaining trade licenses and trademark registration for your business operations and brand protection.",
+        },
+        {
+          title: "TIN & BIN Services",
+          description:
+            "Tax Identification Number and Business Identification Number registration and management services for individuals and businesses.",
         },
         {
           title: "IRC & ERC Services",
           description:
-            "Import Registration Certificate and Export Registration Certificate processing with complete documentation support.",
+            "Import Registration Certificate and Export Registration Certificate processing with complete documentation and compliance support.",
         },
         {
-          title: "Licensing Services",
+          title: "Accounting Service & Software Implementation",
           description:
-            "Comprehensive licensing solutions for various business permits, regulatory approvals, and compliance requirements.",
+            "Professional accounting services and comprehensive accounts setup with modern software implementation for efficient business management.",
+        },
+        {
+          title: "Business Audit",
+          description:
+            "Thorough business audit services identifying potential risks, compliance issues, and areas for operational and financial improvement.",
+        },
+        {
+          title: "Financial Audit",
+          description:
+            "Independent financial audit services ensuring accuracy, compliance, and transparency in your financial reporting and statements.",
+        },
+        {
+          title: "RJSC, VAT & Tax Return Services",
+          description:
+            "Complete RJSC return filing, VAT return preparation, and withholding tax return services ensuring timely compliance with regulations.",
         },
       ],
     },
@@ -184,6 +194,15 @@ export const translations = {
         terms: "Terms of Service",
       },
     },
+    // Services Page
+    services_page_title: "Our Services",
+    services_page_subtitle:
+      "Comprehensive tax advisory, VAT consultancy, company registration, and business services in Bangladesh. Expert solutions for your business needs.",
+    our_professional_services: "Our Professional Services",
+    services_cta_title: "Ready to Get Started?",
+    services_cta_subtitle:
+      "Let's discuss your project requirements and find the perfect solution for your business needs.",
+    get_quote: "Get Quote",
   },
   bn: {
     // Navbar
@@ -198,7 +217,7 @@ export const translations = {
       title: "পেশাদার ট্যাক্স ও ব্যবসায়িক সমাধান",
       subtitle: "আপনার আর্থিক সাফল্যের জন্য বিশেষজ্ঞ পরামর্শ",
       description:
-        "আপনার নির্দিষ্ট প্রয়োজনের জন্য তৈরি করা ব্যাপক ট্যাক্স পরামর্শ, ভ্যাট পরামর্শ এবং ব্যবসায়িক সমাধান। আপনার আর্থিক প্রয়োজনীয়তা পরিচালনার জন্য আমাদের অভিজ্ঞ পেশাদারদের উপর আস্থা রাখুন।",
+        "আপনার নির্দিষ্ট প্রয়োজন অনুযায়ী তৈরি ব্যাপক ট্যাক্স পরামর্শ, ভ্যাট কনসালটেন্সি, কোম্পানি ডকুমেন্টেশন এবং ব্যবসায়িক সমাধান। আপনার আর্থিক প্রয়োজনীয়তা পরিচালনার জন্য আমাদের অভিজ্ঞ পেশাদারদের উপর আস্থা রাখুন।",
       cta: "শুরু করুন",
       learnMore: "আরও জানুন",
     },
@@ -210,44 +229,54 @@ export const translations = {
         "আপনার ব্যবসাকে উন্নত করতে এবং সমস্ত নিয়ন্ত্রক প্রয়োজনীয়তা মেনে চলতে সাহায্য করার জন্য আমরা বিস্তৃত পেশাদার সেবা প্রদান করি।",
       items: [
         {
-          title: "ভ্যাট পরামর্শ",
-          description:
-            "অভিজ্ঞ ভ্যাট বিশেষজ্ঞরা সুনির্দিষ্ট তথ্য, নিবন্ধন পদ্ধতি প্রদান করেন এবং সমস্ত ভ্যাট কাগজপত্র আপডেট রাখার নিশ্চয়তা দেন।",
-        },
-        {
           title: "ট্যাক্স পরামর্শ",
           description:
-            "প্রতিযোগিতার চেয়ে এগিয়ে থাকা পেশাদার দক্ষতার সাথে ব্যক্তি এবং কর্পোরেট ক্লায়েন্ট উভয়ের জন্য ব্যাপক কর সমাধান।",
+            "ব্যক্তি এবং কর্পোরেট ক্লায়েন্ট উভয়ের জন্য পেশাদার দক্ষতা এবং কৌশলগত পরিকল্পনা সহ ব্যাপক কর সমাধান।",
         },
         {
-          title: "ব্যবসায়িক নিরীক্ষা",
+          title: "ভ্যাট কনসালটেন্সি",
           description:
-            "অভ্যন্তরীণ অ্যাকাউন্টিং নিয়ন্ত্রণ প্রক্রিয়ায় সম্ভাব্য ঝুঁকি এবং উন্নতির ক্ষেত্র চিহ্নিত করার আর্থিক নিরীক্ষা সেবা।",
-        },
-        {
-          title: "ব্যবসায়িক পরামর্শ",
-          description:
-            "ব্যবসায়িক কৌশল ও পরিকল্পনা, অপারেশনাল পর্যালোচনা, বোর্ডের কার্যকারিতা, বেঞ্চমার্কিং এবং ব্যাপক পরামর্শ সেবা।",
+            "বিশেষজ্ঞ ভ্যাট বিশেষজ্ঞরা সুনির্দিষ্ট তথ্য, নিবন্ধন পদ্ধতি প্রদান করেন এবং সমস্ত ভ্যাট সম্মতির প্রয়োজনীয়তা পূরণ করেন।",
         },
         {
           title: "কোম্পানি নিবন্ধন",
           description:
-            "অপ্রয়োজনীয় ফি বাদ দিয়ে, কাগজপত্র সামলিয়ে, আইনি জটিলতা এবং স্টার্টআপ ইকোসিস্টেমে অ্যাক্সেস প্রদান করে ব্যবসা শুরুকে সহজ করা।",
+            "লিমিটেড কোম্পানি, পার্টনারশিপ ফার্ম, ফাউন্ডেশন, সোসাইটি এবং অন্যান্য ব্যবসায়িক কাঠামো সহ সম্পূর্ণ কোম্পানি নিবন্ধন সেবা।",
         },
         {
-          title: "ট্রেড লাইসেন্স",
+          title: "ট্রেড লাইসেন্স ও ট্রেডমার্ক নিবন্ধন",
           description:
-            "সমস্ত প্রয়োজনীয় ডকুমেন্টেশন এবং আইনি প্রয়োজনীয়তা সহ আপনার ব্যবসায়িক কার্যক্রমের জন্য ট্রেড লাইসেন্স পেতে সম্পূর্ণ সহায়তা।",
+            "আপনার ব্যবসায়িক কার্যক্রম এবং ব্র্যান্ড সুরক্ষার জন্য ট্রেড লাইসেন্স এবং ট্রেডমার্ক নিবন্ধন পেতে ব্যাপক সহায়তা।",
         },
         {
-          title: "IRC ও ERC সেবা",
+          title: "টিআইএন ও বিআইএন সেবা",
           description:
-            "সম্পূর্ণ ডকুমেন্টেশন সাপোর্ট সহ আমদানি নিবন্ধন সার্টিফিকেট এবং রপ্তানি নিবন্ধন সার্টিফিকেট প্রক্রিয়াকরণ।",
+            "ব্যক্তি এবং ব্যবসার জন্য ট্যাক্স আইডেন্টিফিকেশন নম্বর এবং বিজনেস আইডেন্টিফিকেশন নম্বর নিবন্ধন ও পরিচালনা সেবা।",
         },
         {
-          title: "লাইসেন্সিং সেবা",
+          title: "আইআরসি ও ইআরসি সেবা",
           description:
-            "বিভিন্ন ব্যবসায়িক পারমিট, নিয়ন্ত্রক অনুমোদন এবং সম্মতির প্রয়োজনীয়তার জন্য ব্যাপক লাইসেন্সিং সমাধান।",
+            "সম্পূর্ণ ডকুমেন্টেশন এবং সম্মতি সহায়তা সহ আমদানি নিবন্ধন সার্টিফিকেট এবং রপ্তানি নিবন্ধন সার্টিফিকেট প্রক্রিয়াকরণ।",
+        },
+        {
+          title: "অ্যাকাউন্টিং সেবা ও সফটওয়্যার বাস্তবায়ন",
+          description:
+            "দক্ষ ব্যবসা পরিচালনার জন্য আধুনিক সফটওয়্যার বাস্তবায়ন সহ পেশাদার অ্যাকাউন্টিং সেবা এবং ব্যাপক অ্যাকাউন্ট সেটআপ।",
+        },
+        {
+          title: "ব্যবসায়িক নিরীক্ষা",
+          description:
+            "সম্ভাব্য ঝুঁকি, সম্মতির সমস্যা এবং অপারেশনাল ও আর্থিক উন্নতির ক্ষেত্রগুলি চিহ্নিত করে পুঙ্খানুপুঙ্খ ব্যবসায়িক নিরীক্ষা সেবা।",
+        },
+        {
+          title: "আর্থিক নিরীক্ষা",
+          description:
+            "আপনার আর্থিক প্রতিবেদন এবং বিবৃতিতে নির্ভুলতা, সম্মতি এবং স্বচ্ছতা নিশ্চিত করে স্বাধীন আর্থিক নিরীক্ষা সেবা।",
+        },
+        {
+          title: "আরজেএসসি, ভ্যাট ও ট্যাক্স রিটার্ন সেবা",
+          description:
+            "নিয়মের সাথে সময়মতো সম্মতি নিশ্চিত করে সম্পূর্ণ আরজেএসসি রিটার্ন ফাইলিং, ভ্যাট রিটার্ন প্রস্তুতি এবং উইথহোল্ডিং ট্যাক্স রিটার্ন সেবা।",
         },
       ],
     },
@@ -360,6 +389,16 @@ export const translations = {
         terms: "সেবার শর্তাবলি",
       },
     },
+
+    // Services Page
+    services_page_title: "আমাদের সেবাসমূহ",
+    services_page_subtitle:
+      "বাংলাদেশে ব্যাপক ট্যাক্স পরামর্শ, ভ্যাট পরামর্শ, কোম্পানি নিবন্ধন এবং ব্যবসায়িক সেবা। আপনার ব্যবসায়িক প্রয়োজনের জন্য বিশেষজ্ঞ সমাধান।",
+    our_professional_services: "আমাদের পেশাদার সেবাসমূহ",
+    services_cta_title: "শুরু করতে প্রস্তুত?",
+    services_cta_subtitle:
+      "আসুন আপনার প্রকল্পের প্রয়োজনীয়তা নিয়ে আলোচনা করি এবং আপনার ব্যবসায়িক প্রয়োজনের জন্য নিখুঁত সমাধান খুঁজে পাই।",
+    get_quote: "কোট পান",
   },
 };
 
