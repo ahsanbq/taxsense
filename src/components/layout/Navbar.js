@@ -11,61 +11,47 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleServicesDropdown = () => {
-    setIsServicesDropdownOpen(!isServicesDropdownOpen);
-  };
-
-  // Services data with icons and slugs
+  // Services data with slugs
   const servicesData = [
     {
       title: "Tax Advisory",
       slug: "tax-advisory",
-      icon: "💰",
     },
     {
       title: "VAT Consultancy",
       slug: "vat-consultancy",
-      icon: "📊",
     },
     {
       title: "Company Registration",
       slug: "company-registration",
-      icon: "🏢",
     },
     {
       title: "Trade License & Trademark Registration",
       slug: "trade-license-trademark-registration",
-      icon: "📄",
     },
     {
       title: "TIN & BIN Services",
       slug: "tin-bin",
-      icon: "🆔",
     },
     {
       title: "IRC & ERC Services",
       slug: "irc-erc",
-      icon: "🌐",
     },
     {
       title: "Accounting Service & Software Implementation",
       slug: "accounting-service",
-      icon: "💻",
     },
     {
       title: "Business Audit",
       slug: "business-audit",
-      icon: "🔍",
     },
     {
       title: "Financial Audit",
       slug: "audit",
-      icon: "📋",
     },
     {
       title: "RJSC, VAT & Tax Return Services",
       slug: "rjsc-return-vat-withholding",
-      icon: "📝",
     },
   ];
 
@@ -116,7 +102,6 @@ const Navbar = () => {
               </li>
               <li role="none" className="relative">
                 <button
-                  onClick={toggleServicesDropdown}
                   onMouseEnter={() => setIsServicesDropdownOpen(true)}
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
                   className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors flex items-center"
@@ -124,9 +109,7 @@ const Navbar = () => {
                 >
                   {t.nav.services}
                   <svg
-                    className={`ml-1 h-4 w-4 transition-transform ${
-                      isServicesDropdownOpen ? "rotate-180" : ""
-                    }`}
+                    className="ml-1 h-4 w-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -140,7 +123,7 @@ const Navbar = () => {
                   </svg>
                 </button>
 
-                {/* Services Dropdown */}
+                {/* Clean Services Dropdown */}
                 <div
                   className={`absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 transition-all duration-200 ${
                     isServicesDropdownOpen
@@ -154,12 +137,9 @@ const Navbar = () => {
                     <Link
                       key={index}
                       href={`/services/${service.slug}`}
-                      className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                      className="block px-4 py-3 text-gray-700 hover:bg-[#700000] hover:text-white focus:bg-[#700000] focus:text-white focus:outline-none transition-colors duration-200 rounded-md mx-2 my-1 font-medium"
                     >
-                      <span className="text-xl mr-3">{service.icon}</span>
-                      <span className="text-sm font-medium">
-                        {service.title}
-                      </span>
+                      {service.title}
                     </Link>
                   ))}
                 </div>
@@ -302,7 +282,9 @@ const Navbar = () => {
             </li>
             <li role="none">
               <button
-                onClick={toggleServicesDropdown}
+                onClick={() =>
+                  setIsServicesDropdownOpen(!isServicesDropdownOpen)
+                }
                 className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium transition-colors w-full text-left flex items-center justify-between"
                 role="menuitem"
               >
@@ -334,11 +316,10 @@ const Navbar = () => {
                   <Link
                     key={index}
                     href={`/services/${service.slug}`}
-                    className="flex items-center px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
+                    className="block px-3 py-2 text-gray-600 hover:bg-[#700000] hover:text-white focus:bg-[#700000] focus:text-white focus:outline-none transition-colors duration-200 rounded-md font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <span className="text-lg mr-3">{service.icon}</span>
-                    <span className="text-sm">{service.title}</span>
+                    {service.title}
                   </Link>
                 ))}
               </div>

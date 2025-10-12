@@ -7,7 +7,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen bg-gradient-to-br from-gray-50 via-red-200 to-[#A21B21] overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-br from-gray-100 via-red-300 to-[#A21B21] overflow-hidden"
       role="banner"
     >
       {/* Decorative elements */}
@@ -46,7 +46,7 @@ export default function HeroSection() {
                   </div>
                   <div className="w-1/2 rounded-xl overflow-hidden">
                     <Image
-                      src="/Hero/hero2.jpeg"
+                      src="/Hero/hero2-removebg.png"
                       alt="TaxSense Business Solutions - Modern office environment for professional tax consultancy"
                       className="w-full h-auto object-cover"
                       width={300}
@@ -107,7 +107,7 @@ export default function HeroSection() {
             {/* Desktop View: floating/overlapping images with shadow */}
             <div className="order-1 lg:order-2 hidden lg:block relative h-[600px] w-full">
               <div className="absolute top-1/3 right-0 w-96 h-[500px] group z-20 animate-float">
-                <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                <div className="relative h-full w-full rounded-full overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500 bg-[#700000]">
                   <Image
                     src="/Hero/hero.png"
                     alt="TaxSense Professional Tax Consultancy Services - Expert team providing comprehensive tax solutions"
@@ -116,18 +116,14 @@ export default function HeroSection() {
                     height={500}
                     priority
                   />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-                    aria-hidden="true"
-                  ></div>
                 </div>
               </div>
               <div className="absolute bottom-20 left-0 w-96 h-[500px] group z-20 animate-float animation-delay-2000">
-                <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl transform -rotate-0 hover:rotate-0 transition-all duration-500">
+                <div className="relative h-full w-full rounded-full overflow-hidden transform -rotate-0 hover:rotate-0 transition-all duration-500 bg-[#700000] pb-8 pl-8">
                   <Image
-                    src="/Hero/hero2.jpeg"
+                    src="/Hero/hero2-removebg.png"
                     alt="TaxSense Business Solutions - Modern office environment for professional tax consultancy"
-                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                    className="w-full scale-110 h-full object-cover transform hover:scale-110 transition-transform duration-500"
                     width={400}
                     height={500}
                     priority
