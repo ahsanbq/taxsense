@@ -60,7 +60,7 @@ export default function HeroSection() {
                 <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp animation-delay-400">
                   <Link
                     href="/contact"
-                    className="group btn btn-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/30 inline-flex items-center justify-center"
+                    className="group inline-flex items-center justify-center bg-[#700000] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:bg-[#8b1f1f] cursor-pointer"
                     aria-label="Contact TaxSense for professional tax consultation"
                   >
                     {t.hero.cta}
@@ -81,7 +81,7 @@ export default function HeroSection() {
                   </Link>
                   <Link
                     href="/about"
-                    className="group bg-black text-white cursor-pointer px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm"
+                    className="group inline-flex items-center justify-center bg-white text-[#700000] border border-[#700000] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 transform hover:bg-[#fdecec] cursor-pointer overflow-hidden transform-gpu"
                     aria-label="Learn more about TaxSense services"
                   >
                     {t.hero.learnMore}

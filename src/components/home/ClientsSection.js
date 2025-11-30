@@ -87,7 +87,7 @@ export default function ClientsSection() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
             {t.clients.subtitle}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -104,7 +104,7 @@ export default function ClientsSection() {
           {/* Left Arrow Button */}
           <button
             onClick={slideLeft}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-700 hover:text-primary p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-700 hover:text-[#8b1f1f] p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
             aria-label="Previous slide"
           >
             <svg
@@ -125,7 +125,7 @@ export default function ClientsSection() {
           {/* Right Arrow Button */}
           <button
             onClick={slideRight}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-700 hover:text-primary p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-700 hover:text-[#8b1f1f] p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
             aria-label="Next slide"
           >
             <svg
@@ -173,10 +173,10 @@ export default function ClientsSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {t.clients.stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">
+              <div className="text-3xl font-bold text-black mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="text-gray-800">{stat.label}</div>
             </div>
           ))}
         </div>

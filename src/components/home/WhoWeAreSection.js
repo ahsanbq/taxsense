@@ -24,7 +24,7 @@ export default function WhoWeAreSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/about">
-                <button className="btn btn-primary bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center group">
+                <button className="bg-[#700000] hover:bg-[#8b1f1f] text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center cursor-pointer">
                   {t.whoWeAre.cta}
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
@@ -43,7 +43,7 @@ export default function WhoWeAreSection() {
               </Link>
 
               <Link href="/contact">
-                <button className="border-2 border-black hover:border-primary bg-transparent hover:bg-primary/5 text-black hover:text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center group">
+                <button className="border border-[#700000] hover:bg-[#8b1f1f] hover:text-white bg-transparent text-[#700000] px-8 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer overflow-hidden transform-gpu">
                   Get In Touch
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"

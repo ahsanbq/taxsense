@@ -130,7 +130,7 @@ export default function PricingPlansSection() {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full py-3 px-6 rounded-lg font-semibold cursor-pointer transition-all duration-300 bg-white hover:bg-gray-100 text-black shadow-lg hover:shadow-xl">
+                <button className="w-full py-3 px-6 rounded-xl font-semibold cursor-pointer transition-all duration-300 bg-[#700000] hover:bg-[#8b1f1f] text-white shadow-lg hover:shadow-xl">
                   Get Quote
                 </button>
               </div>
@@ -151,7 +151,7 @@ export default function PricingPlansSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/services">
-                <button className="group btn-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg hover:shadow-primary/30">
+                <button className="group bg-[#700000] hover:bg-[#8b1f1f] text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg cursor-pointer">
                   Explore All Packages
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
@@ -170,7 +170,7 @@ export default function PricingPlansSection() {
               </Link>
 
               <Link href="/contact">
-                <button className="group border-2 border-black hover:border-primary bg-transparent hover:bg-primary/5 text-black hover:text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                <button className="group border border-[#700000] hover:bg-[#8b1f1f] hover:text-white bg-transparent text-[#700000] px-8 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer overflow-hidden transform-gpu">
                   Request Custom Quote
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"

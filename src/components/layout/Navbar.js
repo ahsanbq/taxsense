@@ -11,48 +11,18 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Services data with slugs
+  // Services data with slugs (titles will be localized from translations)
   const servicesData = [
-    {
-      title: "Tax Advisory",
-      slug: "tax-advisory",
-    },
-    {
-      title: "VAT Consultancy",
-      slug: "vat-consultancy",
-    },
-    {
-      title: "Company Registration",
-      slug: "company-registration",
-    },
-    {
-      title: "Trade License & Trademark Registration",
-      slug: "trade-license-trademark-registration",
-    },
-    {
-      title: "TIN & BIN Services",
-      slug: "tin-bin",
-    },
-    {
-      title: "IRC & ERC Services",
-      slug: "irc-erc",
-    },
-    {
-      title: "Accounting Service & Software Implementation",
-      slug: "accounting-service",
-    },
-    {
-      title: "Business Audit",
-      slug: "business-audit",
-    },
-    {
-      title: "Financial Audit",
-      slug: "audit",
-    },
-    {
-      title: "RJSC, VAT & Tax Return Services",
-      slug: "rjsc-return-vat-withholding",
-    },
+    { slug: "tax-advisory" },
+    { slug: "vat-consultancy" },
+    { slug: "company-registration" },
+    { slug: "trade-license-trademark-registration" },
+    { slug: "tin-bin" },
+    { slug: "irc-erc" },
+    { slug: "accounting-service" },
+    { slug: "business-audit" },
+    { slug: "audit" },
+    { slug: "rjsc-return-vat-withholding" },
   ];
 
   return (
@@ -133,15 +103,41 @@ const Navbar = () => {
                   onMouseEnter={() => setIsServicesDropdownOpen(true)}
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
                 >
-                  {servicesData.map((service, index) => (
-                    <Link
-                      key={index}
-                      href={`/services/${service.slug}`}
-                      className="block px-4 py-3 text-gray-700 hover:bg-[#700000] hover:text-white focus:bg-[#700000] focus:text-white focus:outline-none transition-colors duration-200 rounded-md mx-2 my-1 font-medium"
-                    >
-                      {service.title}
-                    </Link>
-                  ))}
+                  {servicesData.map((service, index) => {
+                    // Localized title lookup: fall back to English slug-title when translations don't match
+                    const localizedTitle =
+                      (t.services &&
+                        t.services.items &&
+                        t.services.items[index] &&
+                        t.services.items[index].title) ||
+                      // fallback mapping for rare mismatches
+                      {
+                        "tax-advisory": "Tax Advisory",
+                        "vat-consultancy": "VAT Consultancy",
+                        "company-registration": "Company Registration",
+                        "trade-license-trademark-registration":
+                          "Trade License & Trademark Registration",
+                        "tin-bin": "TIN & BIN Services",
+                        "irc-erc": "IRC & ERC Services",
+                        "accounting-service":
+                          "Accounting Service & Software Implementation",
+                        "business-audit": "Business Audit",
+                        audit: "Financial Audit",
+                        "rjsc-return-vat-withholding":
+                          "RJSC, VAT & Tax Return Services",
+                      }[service.slug] ||
+                      service.slug;
+
+                    return (
+                      <Link
+                        key={index}
+                        href={`/services/${service.slug}`}
+                        className="block px-4 py-3 text-gray-700 hover:bg-[#8b1f1f] hover:text-white focus:bg-[#8b1f1f] focus:text-white focus:outline-none transition-colors duration-200 rounded-md mx-2 my-1 font-medium cursor-pointer"
+                      >
+                        {localizedTitle}
+                      </Link>
+                    );
+                  })}
                 </div>
               </li>
               <li role="none">
@@ -312,16 +308,40 @@ const Navbar = () => {
                   isServicesDropdownOpen ? "block" : "hidden"
                 } ml-4 mt-2 space-y-2`}
               >
-                {servicesData.map((service, index) => (
-                  <Link
-                    key={index}
-                    href={`/services/${service.slug}`}
-                    className="block px-3 py-2 text-gray-600 hover:bg-[#700000] hover:text-white focus:bg-[#700000] focus:text-white focus:outline-none transition-colors duration-200 rounded-md font-medium"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {service.title}
-                  </Link>
-                ))}
+                {servicesData.map((service, index) => {
+                  const localizedTitle =
+                    (t.services &&
+                      t.services.items &&
+                      t.services.items[index] &&
+                      t.services.items[index].title) ||
+                    {
+                      "tax-advisory": "Tax Advisory",
+                      "vat-consultancy": "VAT Consultancy",
+                      "company-registration": "Company Registration",
+                      "trade-license-trademark-registration":
+                        "Trade License & Trademark Registration",
+                      "tin-bin": "TIN & BIN Services",
+                      "irc-erc": "IRC & ERC Services",
+                      "accounting-service":
+                        "Accounting Service & Software Implementation",
+                      "business-audit": "Business Audit",
+                      audit: "Financial Audit",
+                      "rjsc-return-vat-withholding":
+                        "RJSC, VAT & Tax Return Services",
+                    }[service.slug] ||
+                    service.slug;
+
+                  return (
+                    <Link
+                      key={index}
+                      href={`/services/${service.slug}`}
+                      className="block px-3 py-2 text-gray-600 hover:bg-[#8b1f1f] hover:text-white focus:bg-[#8b1f1f] focus:text-white focus:outline-none transition-colors duration-200 rounded-md font-medium cursor-pointer"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {localizedTitle}
+                    </Link>
+                  );
+                })}
               </div>
             </li>
             <li role="none">

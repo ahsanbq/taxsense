@@ -442,12 +442,12 @@ export default function Services() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
+              <button className="bg-white text-primary px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
                 {t.get_quote || "Get Quote"}
               </button>
             </Link>
             <Link href="/about">
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors duration-300">
+              <button className="border border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-primary transition-colors duration-300 cursor-pointer overflow-hidden transform-gpu">
                 Learn More About Us
               </button>
             </Link>

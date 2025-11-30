@@ -13,38 +13,33 @@ export default function ServicesSection() {
     "Company Registration": "company-registration",
     "Trade License & Trademark Registration":
       "trade-license-trademark-registration",
-    "TIN & BIN Services": "tin-bin",
+
     "IRC & ERC Services": "irc-erc",
     "Accounting Service & Software Implementation": "accounting-service",
     "Business Audit": "business-audit",
-    "Financial Audit": "audit",
-    "RJSC, VAT & Tax Return Services": "rjsc-return-vat-withholding",
+
     // Bengali mappings
     "ট্যাক্স পরামর্শ": "tax-advisory",
     "ভ্যাট পরামর্শ": "vat-consultancy",
+    "ভ্যাট কনসালটেন্সি": "vat-consultancy",
     "কোম্পানি নিবন্ধন": "company-registration",
     "ট্রেড লাইসেন্স ও ট্রেডমার্ক নিবন্ধন":
       "trade-license-trademark-registration",
-    "টিআইএন ও বিআইএন সেবা": "tin-bin",
+
     "আইআরসি ও ইআরসি সেবা": "irc-erc",
     "অ্যাকাউন্টিং সেবা ও সফটওয়্যার বাস্তবায়ন": "accounting-service",
     "ব্যবসায়িক নিরীক্ষা": "business-audit",
-    "আর্থিক নিরীক্ষা": "audit",
-    "আরজেএসসি, ভ্যাট ও ট্যাক্স রিটার্ন সেবা": "rjsc-return-vat-withholding",
   };
 
   // Service data with updated image URLs for new services
   const serviceImages = [
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop", // Tax Advisory
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop", // VAT Consultancy
-    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop", // Company Registration
-    "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop", // Trade License & Trademark
-    "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=400&h=300&fit=crop", // TIN & BIN Services
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop", // IRC & ERC Services
+    "/service/tax-advisory.webp", // Tax Advisory
+    "/service/vat-consultancy.webp", // VAT Consultancy
+    "/service/company-registration.jpg", // Company Registration
+    "/service/trademark-registration.jfif", // Trade License & Trademark
+    "/service/irc-erc.png", // IRC & ERC Services
     "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop", // Accounting & Software
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop", // Business Audit
-    "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=300&fit=crop", // Financial Audit
-    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop", // RJSC, VAT & Tax Returns
   ];
 
   // Function to get the correct navigation slug for a service
@@ -63,24 +58,41 @@ export default function ServicesSection() {
       .replace(/(^-|-$)/g, "");
   };
 
-  // Local fallback images in case external images fail
-  const fallbackImages = [
-    "/services/tax-advisory.jpg",
-    "/services/vat-consultancy.jpg",
-    "/services/company-registration.jpg",
-    "/services/trade-license.jpg",
-    "/services/tin-bin.jpg",
-    "/services/irc-erc.jpg",
-    "/services/accounting.jpg",
-    "/services/business-audit.jpg",
-    "/services/financial-audit.jpg",
-    "/services/returns.jpg",
+  // Remove specific services (English + Bengali names) from display
+  const excludedTitles = [
+    "TIN & BIN Services",
+    "টিআইএন ও বিআইএন সেবা",
+    "Financial Audit",
+    "আর্থিক নিরীক্ষা",
+    "RJSC, VAT & Tax Return Services",
+    "আরজেএসসি, ভ্যাট ও ট্যাক্স রিটার্ন সেবা",
   ];
 
+  const filteredServices = t.services.items.filter(
+    (s) => !excludedTitles.includes(s.title)
+  );
+
+  // Append an "Other Service" card to the end of the list with a fallback description
+  const servicesWithOther = [
+    ...filteredServices,
+    {
+      title: "Other Service",
+      description:
+        t.services.otherDescription ||
+        "Additional tailored services and bespoke support to meet your unique needs.",
+    },
+  ];
+
+  // Map servicesWithOther to their corresponding images (preserve original image mapping if available)
+  const serviceImagesFor = servicesWithOther.map((s) => {
+    const origIndex = t.services.items.findIndex((it) => it.title === s.title);
+    return serviceImages[origIndex] || serviceImages[0];
+  });
+
   // Split services into groups for layout: 4 + 4 + 2 (centered)
-  const firstRowServices = t.services.items.slice(0, 4);
-  const secondRowServices = t.services.items.slice(4, 8);
-  const lastRowServices = t.services.items.slice(8, 10);
+  const firstRowServices = servicesWithOther.slice(0, 4);
+  const secondRowServices = servicesWithOther.slice(4, 8);
+  const lastRowServices = servicesWithOther.slice(8, 10);
 
   return (
     <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
@@ -107,7 +119,10 @@ export default function ServicesSection() {
               key={service.title}
               service={service}
               index={index}
-              imageUrl={serviceImages[index] || serviceImages[0]}
+              imageUrl={
+                serviceImagesFor[servicesWithOther.indexOf(service)] ||
+                serviceImages[0]
+              }
               getServiceSlug={getServiceSlug}
             />
           ))}
@@ -120,7 +135,10 @@ export default function ServicesSection() {
               key={service.title}
               service={service}
               index={index + 4}
-              imageUrl={serviceImages[index + 4] || serviceImages[0]}
+              imageUrl={
+                serviceImagesFor[servicesWithOther.indexOf(service)] ||
+                serviceImages[0]
+              }
               getServiceSlug={getServiceSlug}
             />
           ))}
@@ -134,7 +152,10 @@ export default function ServicesSection() {
                 key={service.title}
                 service={service}
                 index={index + 8}
-                imageUrl={serviceImages[index + 8] || serviceImages[0]}
+                imageUrl={
+                  serviceImagesFor[servicesWithOther.indexOf(service)] ||
+                  serviceImages[0]
+                }
                 getServiceSlug={getServiceSlug}
               />
             ))}
@@ -152,12 +173,10 @@ export default function ServicesSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/services">
-                <button className="btn btn-primary text-white group border-2 border-primary/20 hover:border-primary/40 bg-transparent hover:bg-primary/5 text-primary px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
-                  <span className="bg-clip-text  bg-gradient-to-r from-primary to-primary/70">
-                    Explore All Services
-                  </span>
+                <button className="bg-[#700000] hover:bg-[#8b1f1f] text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer">
+                  Explore All Services
                   <svg
-                    className="ml-2 h-4 w-4 text-primary group-hover:translate-x-1 transition-transform"
+                    className="ml-2 h-4 w-4 text-white group-hover:translate-x-1 transition-transform"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -172,10 +191,10 @@ export default function ServicesSection() {
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="group bg-slate-900 text-stone-100 from-primary to-primary/70 hover:from-primary/80 hover:to-primary/90 shadow-lg hover:shadow-primary/30 text- px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                <button className="border border-[#700000] hover:bg-[#8b1f1f] hover:text-white bg-transparent text-[#700000] px-6 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer overflow-hidden transform-gpu">
                   Get Free Consultation
                   <svg
-                    className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform"
+                    className="ml-2 h-4 w-4 transition-transform"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -381,7 +400,7 @@ const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
   };
 
   return (
-    <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20 transform hover:-translate-y-1">
+    <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20 transform hover:-translate-y-1 flex flex-col h-full">
       {/* Image Section */}
       <div className="relative h-48 overflow-hidden">
         <Image
@@ -401,7 +420,7 @@ const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
       </div>
 
       {/* Content Section */}
-      <div className="p-6">
+      <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
           {service.title}
         </h3>
@@ -411,10 +430,10 @@ const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
         </p>
 
         {/* Action Section */}
-        <div className="flex items-center justify-between">
+        <div className="mt-auto flex items-center justify-between">
           <button
             onClick={handleReadMore}
-            className="text-gray-950 hover:cursor-pointer inline-flex items-center text-primary hover:text-primary-dark font-semibold text-sm transition-colors duration-200 group/btn"
+            className="inline-flex items-center bg-[#700000] text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-[#8b1f1f] transition-colors duration-200 cursor-pointer"
           >
             Learn More
             <svg
