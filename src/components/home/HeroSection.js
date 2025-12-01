@@ -59,7 +59,7 @@ export default function HeroSection() {
 
         {/* Bottom-left corner accent */}
         <svg
-          className="absolute bottom-20 left-12 w-20 h-20 opacity-30 text-white"
+          className="absolute bottom-20 left-12 w-20 h-20 opacity-30 text-red-400"
           viewBox="0 0 80 80"
           fill="none"
           stroke="currentColor"
@@ -149,9 +149,9 @@ export default function HeroSection() {
             </div>
 
             {/* Desktop View: floating/overlapping images */}
-            <div className="order-1 lg:order-2 hidden lg:block relative h-[450px] xl:h-[400px] w-full">
-              <div className="absolute top-2/4 right-30 w-72 xl:w-80 h-[320px] xl:h-[380px] group z-20 animate-float">
-                <div className="relative h-full w-full rounded-full overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500 bg-[#700000]">
+            <div className="order-1 lg:order-2 hidden lg:block relative h-[320px] xl:h-[380px] w-full">
+              <div className="absolute top-2/4 right-20 w-72 xl:w-80 h-[320px] xl:h-[380px] group z-20 animate-float">
+                <div className="relative h-full w-full rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-none overflow-hidden transform  hover:rotate-0 transition-all duration-500 bg-[#700000]">
                   <Image
                     src="/Hero/hero.png"
                     alt="TaxSense Professional Tax Consultancy Services"
@@ -163,12 +163,12 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="absolute bottom-10 left-0 w-72 xl:w-80 h-[320px] xl:h-[380px] group z-20 animate-float animation-delay-2000">
-                <div className="relative h-full w-full rounded-full overflow-hidden transform -rotate-0 transition-all duration-500 bg-[#700000] pb-8 pl-8">
+              <div className="absolute  left-0 w-72 xl:w-80 h-[320px] xl:h-[380px] group z-20 animate-float animation-delay-2000">
+                <div className="relative h-full w-full rounded-tl-none rounded-tr-full rounded-bl-full rounded-br-full overflow-hidden transform -rotate-0 transition-all duration-500 bg-[#700000] pb-8 pl-8">
                   <Image
                     src="/Hero/hero2-removebg.png"
                     alt="TaxSense Business Solutions Image"
-                    className="w-full scale-110 h-full object-cover"
+                    className="w-full scale-110 h-full object-cover "
                     width={400}
                     height={380}
                     priority
@@ -178,6 +178,22 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Wave Divider Bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="relative block w-full h-16"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          style={{ transform: "rotate(180deg)" }}
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="fill-gray-50"
+          ></path>
+        </svg>
       </div>
     </section>
   );

@@ -128,7 +128,43 @@ export default function PricingPlansSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="relative py-24 bg-gradient-to-b from-white to-gray-50">
+      {/* Tilted Divider Top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="relative block w-full h-20"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          style={{ transform: "rotateY(180deg)" }}
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            className="fill-gray-100"
+            opacity="0.3"
+          ></path>
+        </svg>
+      </div>
+
+      {/* Decorative Geometric Shapes */}
+      <div
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        aria-hidden="true"
+      >
+        <div className="absolute top-32 left-10 w-16 h-16 border-2 border-primary/10 transform rotate-45"></div>
+        <div className="absolute bottom-32 right-10 w-20 h-20 border-2 border-primary/10 rounded-full"></div>
+        <svg
+          className="absolute top-1/2 right-10 w-24 h-24 opacity-[0.05]"
+          viewBox="0 0 100 100"
+        >
+          <polygon
+            points="50,10 90,90 10,90"
+            fill="currentColor"
+            className="text-primary"
+          />
+        </svg>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

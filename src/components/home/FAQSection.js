@@ -209,13 +209,13 @@ export default function FAQSection() {
 
   const AccordionItem = ({ faq, isOpen, onToggle }) => (
     <div
-      className={`bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 ${
+      className={`bg-white border border-red-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 ${
         isOpen ? "shadow-md" : ""
       }`}
     >
       <button
         onClick={onToggle}
-        className="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-xl"
+        className="w-full px-6 py-5 text-left text-red-800 flex items-center justify-between   rounded-xl"
       >
         <h3 className="text-lg font-semibold text-gray-900 pr-4">
           {faq.question}
@@ -248,7 +248,7 @@ export default function FAQSection() {
               height: "auto",
               transition: {
                 height: { duration: 0.4, ease: "easeInOut" },
-                opacity: { duration: 0.3, delay: 0.1 },
+                opacity: { duration: 0.25, delay: 0.1 },
               },
             }}
             exit={{

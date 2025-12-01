@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,7 +29,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="bg-white shadow-lg fixed w-full top-0 z-50"
+      className="bg-white shadow-xl fixed w-full top-0 z-50 "
       aria-label="Primary navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:max-w-7xl">
@@ -54,9 +56,10 @@ const Navbar = () => {
               <li role="none">
                 <Link
                   href="/"
-                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
+                  className={`navbar-link hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 ${
+                    router.pathname === "/" ? "text-[#700000]" : "text-gray-600"
+                  }`}
                   role="menuitem"
-                  aria-current="page"
                 >
                   {t.nav.home}
                 </Link>
@@ -64,7 +67,11 @@ const Navbar = () => {
               <li role="none">
                 <Link
                   href="/about"
-                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
+                  className={`navbar-link hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 ${
+                    router.pathname === "/about"
+                      ? "text-[#700000]"
+                      : "text-gray-600"
+                  }`}
                   role="menuitem"
                 >
                   {t.nav.about}
@@ -74,7 +81,11 @@ const Navbar = () => {
                 <button
                   onMouseEnter={() => setIsServicesDropdownOpen(true)}
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
-                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 flex items-center"
+                  className={`navbar-link hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 flex items-center ${
+                    router.pathname.startsWith("/services")
+                      ? "text-[#700000]"
+                      : "text-gray-600"
+                  }`}
                   role="menuitem"
                 >
                   {t.nav.services}
@@ -143,7 +154,11 @@ const Navbar = () => {
               <li role="none">
                 <Link
                   href="/resources"
-                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
+                  className={`navbar-link hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 ${
+                    router.pathname === "/resources"
+                      ? "text-[#700000]"
+                      : "text-gray-600"
+                  }`}
                   role="menuitem"
                 >
                   Resources
@@ -152,7 +167,11 @@ const Navbar = () => {
               <li role="none">
                 <Link
                   href="/media"
-                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
+                  className={`navbar-link hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 ${
+                    router.pathname === "/media"
+                      ? "text-[#700000]"
+                      : "text-gray-600"
+                  }`}
                   role="menuitem"
                 >
                   Media
@@ -161,7 +180,11 @@ const Navbar = () => {
               <li role="none">
                 <Link
                   href="/contact"
-                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
+                  className={`navbar-link hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 ${
+                    router.pathname === "/contact"
+                      ? "text-[#700000]"
+                      : "text-gray-600"
+                  }`}
                   role="menuitem"
                 >
                   {t.nav.contact}
@@ -279,7 +302,9 @@ const Navbar = () => {
             <li role="none">
               <Link
                 href="/"
-                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                className={`navbar-link hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                  router.pathname === "/" ? "text-[#700000]" : "text-gray-600"
+                }`}
                 role="menuitem"
               >
                 {t.nav.home}
@@ -288,7 +313,11 @@ const Navbar = () => {
             <li role="none">
               <Link
                 href="/about"
-                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                className={`navbar-link hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                  router.pathname === "/about"
+                    ? "text-[#700000]"
+                    : "text-gray-600"
+                }`}
                 role="menuitem"
               >
                 {t.nav.about}
@@ -299,7 +328,11 @@ const Navbar = () => {
                 onClick={() =>
                   setIsServicesDropdownOpen(!isServicesDropdownOpen)
                 }
-                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-base font-medium transition-all duration-200 w-full text-left flex items-center justify-between"
+                className={`navbar-link hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-base font-medium transition-all duration-200 w-full text-left flex items-center justify-between ${
+                  router.pathname.startsWith("/services")
+                    ? "text-[#700000]"
+                    : "text-gray-600"
+                }`}
                 role="menuitem"
               >
                 {t.nav.services}
@@ -365,7 +398,11 @@ const Navbar = () => {
             <li role="none">
               <Link
                 href="/resources"
-                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                className={`navbar-link hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                  router.pathname === "/resources"
+                    ? "text-[#700000]"
+                    : "text-gray-600"
+                }`}
                 role="menuitem"
               >
                 Resources
@@ -374,7 +411,11 @@ const Navbar = () => {
             <li role="none">
               <Link
                 href="/media"
-                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                className={`navbar-link hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                  router.pathname === "/media"
+                    ? "text-[#700000]"
+                    : "text-gray-600"
+                }`}
                 role="menuitem"
               >
                 Media
@@ -383,7 +424,11 @@ const Navbar = () => {
             <li role="none">
               <Link
                 href="/contact"
-                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                className={`navbar-link hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                  router.pathname === "/contact"
+                    ? "text-[#700000]"
+                    : "text-gray-600"
+                }`}
                 role="menuitem"
               >
                 {t.nav.contact}

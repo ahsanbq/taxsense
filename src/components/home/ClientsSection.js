@@ -69,7 +69,32 @@ export default function ClientsSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="relative py-20 bg-gray-50">
+      {/* Curved Divider Top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="relative block w-full h-12"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+            className="fill-gray-50 opacity-50"
+          ></path>
+        </svg>
+      </div>
+
+      {/* Background Pattern */}
+      <div
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        aria-hidden="true"
+      >
+        <div className="absolute top-20 left-1/4 w-2 h-2 bg-primary/20 rounded-full"></div>
+        <div className="absolute top-40 right-1/3 w-2 h-2 bg-primary/20 rounded-full"></div>
+        <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-primary/20 rounded-full"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Image */}
         <div className="text-center mb-16">

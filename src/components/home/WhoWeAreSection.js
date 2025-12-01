@@ -4,7 +4,33 @@ import { useLanguage } from "../../contexts/LanguageContext";
 export default function WhoWeAreSection() {
   const { t } = useLanguage();
   return (
-    <section className="py-24 bg-gray-100">
+    <section className="relative py-24 bg-gray-100">
+      {/* Decorative Shapes */}
+      <div
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        aria-hidden="true"
+      >
+        {/* Circle decoration */}
+        <div className="absolute top-20 right-10 w-32 h-32 border-4 border-primary/10 rounded-full"></div>
+        <div className="absolute bottom-40 left-10 w-24 h-24 border-4 border-primary/10 rounded-full"></div>
+
+        {/* Dots pattern */}
+        <svg
+          className="absolute top-1/4 left-1/4 w-32 h-32 opacity-[0.07]"
+          viewBox="0 0 100 100"
+        >
+          {Array.from({ length: 25 }).map((_, i) => (
+            <circle
+              key={i}
+              cx={(i % 5) * 20 + 10}
+              cy={Math.floor(i / 5) * 20 + 10}
+              r="2"
+              fill="currentColor"
+              className="text-primary"
+            />
+          ))}
+        </svg>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Text Content */}

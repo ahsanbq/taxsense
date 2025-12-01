@@ -1,23 +1,144 @@
-import Link from "next/link";
-import Image from "next/image";
+import { NextSeo } from "next-seo";
 import Layout from "../../components/layout/Layout";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { NextSeo } from "next-seo";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
-const ServiceCard = ({
-  service,
-  index,
-  imageUrl,
-  getServiceIcon,
-  getServiceSlug,
-}) => {
-  const handleViewService = () => {
+// Service Card Component
+const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
+  const router = useRouter();
+
+  const handleReadMore = () => {
     const slug = getServiceSlug(service.title);
-    window.location.href = `/services/${slug}`;
+    router.push(`/services/${slug}`);
+  };
+
+  const getServiceIcon = (title) => {
+    const iconProps = {
+      className: "w-6 h-6 text-white",
+      fill: "none",
+      stroke: "currentColor",
+      viewBox: "0 0 24 24",
+    };
+
+    if (title.includes("Tax") || title.includes("ট্যাক্স")) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+          />
+        </svg>
+      );
+    }
+    if (title.includes("VAT") || title.includes("ভ্যাট")) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+          />
+        </svg>
+      );
+    }
+    if (title.includes("Company") || title.includes("কোম্পানি")) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+          />
+        </svg>
+      );
+    }
+    if (
+      title.includes("Trade") ||
+      title.includes("Trademark") ||
+      title.includes("ট্রেড")
+    ) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+          />
+        </svg>
+      );
+    }
+    if (
+      title.includes("IRC") ||
+      title.includes("ERC") ||
+      title.includes("আইআরসি") ||
+      title.includes("ইআরসি")
+    ) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9"
+          />
+        </svg>
+      );
+    }
+    if (
+      title.includes("Account") ||
+      title.includes("Software") ||
+      title.includes("অ্যাকাউন্ট") ||
+      title.includes("সফটওয়্যার")
+    ) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+          />
+        </svg>
+      );
+    }
+    if (
+      title.includes("Business Audit") ||
+      title.includes("ব্যবসায়িক নিরীক্ষা")
+    ) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"
+          />
+        </svg>
+      );
+    }
+
+    // Default icon
+    return (
+      <svg {...iconProps}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+        />
+      </svg>
+    );
   };
 
   return (
-    <div className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-primary/30 transform hover:-translate-y-2">
+    <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20 transform hover:-translate-y-1 flex flex-col h-full">
       {/* Image Section */}
       <div className="relative h-48 overflow-hidden">
         <Image
@@ -27,39 +148,28 @@ const ServiceCard = ({
           height={300}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent"></div>
-        <div className="absolute top-4 right-4 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-primary/90 transition-colors duration-300 shadow-lg">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div className="absolute top-4 right-4 w-12 h-12 bg-primary/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
           {getServiceIcon(service.title)}
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="p-6 bg-white">
-        <h3 className="text-xl font-bold text-black mb-3 group-hover:text-primary transition-colors duration-300">
+      <div className="p-6 flex-1 flex flex-col">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
           {service.title}
         </h3>
-
-        <p className="text-gray-700 text-sm leading-relaxed mb-4">
+        <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
           {service.description}
         </p>
 
-        <div className="mb-6">
-          <div className="flex flex-wrap gap-2">
-            <span className="inline-block bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">
-              Professional Service
-            </span>
-            <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">
-              Expert Consultation
-            </span>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
+        {/* Action Section */}
+        <div className="mt-auto flex items-center justify-between">
           <button
-            onClick={handleViewService}
-            className="text-primary hover:text-primary-dark font-semibold text-sm transition-colors duration-200 group/btn inline-flex items-center"
+            onClick={handleReadMore}
+            className="inline-flex items-center bg-[#700000] text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-[#8b1f1f] transition-colors duration-200 cursor-pointer"
           >
-            View Details
+            Learn More
             <svg
               className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200"
               fill="none"
@@ -74,27 +184,25 @@ const ServiceCard = ({
               />
             </svg>
           </button>
-
-          <Link href="/contact">
-            <button
-              className="text-gray-400 hover:text-primary transition-colors duration-200"
-              title="Get Consultation"
+          <button
+            onClick={() => router.push("/contact")}
+            className="text-gray-400 hover:text-primary transition-colors duration-200"
+            title="Get Consultation"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-            </button>
-          </Link>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -104,9 +212,6 @@ const ServiceCard = ({
 export default function Services() {
   const { t } = useLanguage();
 
-  // Get actual services data from context
-  const services = t.services.items;
-
   // Service navigation mapping
   const serviceNavigationMap = {
     "Tax Advisory": "tax-advisory",
@@ -114,32 +219,38 @@ export default function Services() {
     "Company Registration": "company-registration",
     "Trade License & Trademark Registration":
       "trade-license-trademark-registration",
-    "TIN & BIN Services": "tin-bin",
     "IRC & ERC Services": "irc-erc",
     "Accounting Service & Software Implementation": "accounting-service",
     "Business Audit": "business-audit",
-    "Financial Audit": "audit",
-    "RJSC, VAT & Tax Return Services": "rjsc-return-vat-withholding",
-    // Bengali mappings
     "ট্যাক্স পরামর্শ": "tax-advisory",
     "ভ্যাট পরামর্শ": "vat-consultancy",
+    "ভ্যাট কনসালটেন্সি": "vat-consultancy",
     "কোম্পানি নিবন্ধন": "company-registration",
     "ট্রেড লাইসেন্স ও ট্রেডমার্ক নিবন্ধন":
       "trade-license-trademark-registration",
-    "টিআইএন ও বিআইএন সেবা": "tin-bin",
     "আইআরসি ও ইআরসি সেবা": "irc-erc",
     "অ্যাকাউন্টিং সেবা ও সফটওয়্যার বাস্তবায়ন": "accounting-service",
     "ব্যবসায়িক নিরীক্ষা": "business-audit",
-    "আর্থিক নিরীক্ষা": "audit",
-    "আরজেএসসি, ভ্যাট ও ট্যাক্স রিটার্ন সেবা": "rjsc-return-vat-withholding",
   };
 
-  // Function to get the correct navigation slug for a service
+  // Service images
+  const serviceImages = [
+    "/service/tax-advisory.webp",
+    "/service/vat-consultancy.webp",
+    "/service/company-registration.jpg",
+    "/service/trademark-registration.jfif",
+    "/service/tax-advisory.webp",
+    "/service/irc-erc.png",
+    "/service/accounting-software.jfif",
+    "/service/business-audit.png",
+    "/service/tax-advisory.webp",
+    "/service/vat-consultancy.webp",
+  ];
+
   const getServiceSlug = (serviceTitle) => {
     if (serviceNavigationMap[serviceTitle]) {
       return serviceNavigationMap[serviceTitle];
     }
-
     return serviceTitle
       .toLowerCase()
       .replace(/[&,]/g, "-")
@@ -148,230 +259,47 @@ export default function Services() {
       .replace(/(^-|-$)/g, "");
   };
 
-  // Service data with updated image URLs
-  const serviceImages = [
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop", // Tax Advisory
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop", // VAT Consultancy
-    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop", // Company Registration
-    "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop", // Trade License & Trademark
-    "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=400&h=300&fit=crop", // TIN & BIN Services
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop", // IRC & ERC Services
-    "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop", // Accounting & Software
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop", // Business Audit
-    "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=300&fit=crop", // Financial Audit
-    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop", // RJSC, VAT & Tax Returns
+  // Filter services
+  const excludedTitles = [
+    "TIN & BIN Services",
+    "টিআইএন ও বিআইএন সেবা",
+    "Financial Audit",
+    "আর্থিক নিরীক্ষা",
+    "RJSC, VAT & Tax Return Services",
+    "আরজেএসসি, ভ্যাট ও ট্যাক্স রিটার্ন সেবা",
   ];
 
-  // Function to get service icon based on title
-  const getServiceIcon = (title) => {
-    const titleKey = title.toLowerCase();
+  const filteredServices = t.services.items.filter(
+    (s) => !excludedTitles.includes(s.title)
+  );
 
-    if (titleKey.includes("tax") || titleKey.includes("ট্যাক্স")) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-          />
-        </svg>
-      );
+  const servicesWithOther = [
+    ...filteredServices,
+    {
+      title: "Other Service",
+      description:
+        t.services.otherDescription ||
+        "Additional tailored services and bespoke support to meet your unique needs.",
+    },
+  ];
+
+  const serviceImagesFor = servicesWithOther.map((s) => {
+    const origIndex = t.services.items.findIndex((it) => it.title === s.title);
+    if (origIndex >= 0 && origIndex < serviceImages.length) {
+      return serviceImages[origIndex];
     }
+    return "/service/other.webp";
+  });
 
-    if (titleKey.includes("vat") || titleKey.includes("ভ্যাট")) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-          />
-        </svg>
-      );
-    }
-
-    if (titleKey.includes("company") || titleKey.includes("কোম্পানি")) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-          />
-        </svg>
-      );
-    }
-
-    if (
-      titleKey.includes("trade") ||
-      titleKey.includes("trademark") ||
-      titleKey.includes("ট্রেড")
-    ) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-          />
-        </svg>
-      );
-    }
-
-    if (
-      titleKey.includes("tin") ||
-      titleKey.includes("bin") ||
-      titleKey.includes("টিআইএন") ||
-      titleKey.includes("বিআইএন")
-    ) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
-          />
-        </svg>
-      );
-    }
-
-    if (
-      titleKey.includes("irc") ||
-      titleKey.includes("erc") ||
-      titleKey.includes("আইআরসি") ||
-      titleKey.includes("ইআরসি")
-    ) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-          />
-        </svg>
-      );
-    }
-
-    if (
-      titleKey.includes("accounting") ||
-      titleKey.includes("software") ||
-      titleKey.includes("অ্যাকাউন্টিং")
-    ) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-          />
-        </svg>
-      );
-    }
-
-    if (titleKey.includes("audit") || titleKey.includes("নিরীক্ষা")) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      );
-    }
-
-    if (
-      titleKey.includes("rjsc") ||
-      titleKey.includes("return") ||
-      titleKey.includes("আরজেএসসি")
-    ) {
-      return (
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-          />
-        </svg>
-      );
-    }
-
-    // Default icon
-    return (
-      <svg
-        className="w-6 h-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
-        />
-      </svg>
-    );
-  };
+  // Split services: 4 + 4 + 2
+  const firstRowServices = servicesWithOther.slice(0, 4);
+  const secondRowServices = servicesWithOther.slice(4, 8);
+  const lastRowServices = servicesWithOther.slice(8, 10);
 
   return (
     <Layout>
       <NextSeo
-        title={`Our Services - TaxSense Ltd`}
+        title="Our Services - TaxSense Ltd"
         description="Comprehensive tax advisory, VAT consultancy, company registration, and business services in Bangladesh. Expert solutions for your business needs."
         canonical="https://taxsense.com.bd/services"
         openGraph={{
@@ -391,66 +319,143 @@ export default function Services() {
         }}
       />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-primary-dark text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {t.services_page_title}
+      {/* Hero Section with Gradient */}
+      <section className="relative bg-gradient-to-r from-[#700000] via-[#8b1f1f] to-[#700000] text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span className="inline-block bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20">
+            {t.services?.subtitle || "Professional Solutions"}
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            {t.services?.title || "Our Services"}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            {t.services_page_subtitle}
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
+            {t.services?.description ||
+              "Comprehensive business solutions tailored to your needs"}
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16 bg-gray-50">
+      {/* Services Grid Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
           <div className="text-center mb-16">
+            <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+              What We Offer
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              {t.our_professional_services}
+              Professional Services Portfolio
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover our comprehensive range of professional services designed
-              to meet all your business needs
+              Discover our comprehensive range of services designed to meet all
+              your business needs
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+          {/* First Row - 4 Services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            {firstRowServices.map((service, index) => (
               <ServiceCard
-                key={index}
+                key={service.title}
                 service={service}
                 index={index}
-                imageUrl={serviceImages[index] || serviceImages[0]}
-                getServiceIcon={getServiceIcon}
+                imageUrl={
+                  serviceImagesFor[servicesWithOther.indexOf(service)] ||
+                  serviceImages[0]
+                }
                 getServiceSlug={getServiceSlug}
               />
             ))}
           </div>
+
+          {/* Second Row - 4 Services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            {secondRowServices.map((service, index) => (
+              <ServiceCard
+                key={service.title}
+                service={service}
+                index={index + 4}
+                imageUrl={
+                  serviceImagesFor[servicesWithOther.indexOf(service)] ||
+                  serviceImages[0]
+                }
+                getServiceSlug={getServiceSlug}
+              />
+            ))}
+          </div>
+
+          {/* Third Row - 2 Services (Centered) */}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
+              {lastRowServices.map((service, index) => (
+                <ServiceCard
+                  key={service.title}
+                  service={service}
+                  index={index + 8}
+                  imageUrl={
+                    serviceImagesFor[servicesWithOther.indexOf(service)] ||
+                    serviceImages[0]
+                  }
+                  getServiceSlug={getServiceSlug}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t.services_cta_title}
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            {t.services_cta_subtitle}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <button className="bg-white text-primary px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-                {t.get_quote || "Get Quote"}
-              </button>
-            </Link>
-            <Link href="/about">
-              <button className="border border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-primary transition-colors duration-300 cursor-pointer overflow-hidden transform-gpu">
-                Learn More About Us
-              </button>
-            </Link>
+      {/* CTA Section - White Background */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-12 rounded-2xl border border-primary/20">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                Ready to Work with Us?
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Let's discuss how our professional services can help your
+                business grow and succeed
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact">
+                  <button className="bg-[#700000] hover:bg-[#8b1f1f] text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl">
+                    Get a Quote
+                    <svg
+                      className="ml-2 h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </button>
+                </Link>
+                <Link href="/about">
+                  <button className="border-2 border-[#700000] text-[#700000] hover:bg-[#700000] hover:text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer">
+                    Learn More About Us
+                    <svg
+                      className="ml-2 h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
