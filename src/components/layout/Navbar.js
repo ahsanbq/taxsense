@@ -30,7 +30,7 @@ const Navbar = () => {
       className="bg-white shadow-lg fixed w-full top-0 z-50"
       aria-label="Primary navigation"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:max-w-7xl">
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
@@ -54,7 +54,7 @@ const Navbar = () => {
               <li role="none">
                 <Link
                   href="/"
-                  className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors"
+                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
                   role="menuitem"
                   aria-current="page"
                 >
@@ -64,7 +64,7 @@ const Navbar = () => {
               <li role="none">
                 <Link
                   href="/about"
-                  className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors"
+                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
                   role="menuitem"
                 >
                   {t.nav.about}
@@ -74,7 +74,7 @@ const Navbar = () => {
                 <button
                   onMouseEnter={() => setIsServicesDropdownOpen(true)}
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
-                  className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors flex items-center"
+                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200 flex items-center"
                   role="menuitem"
                 >
                   {t.nav.services}
@@ -142,8 +142,26 @@ const Navbar = () => {
               </li>
               <li role="none">
                 <Link
+                  href="/resources"
+                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
+                  role="menuitem"
+                >
+                  Resources
+                </Link>
+              </li>
+              <li role="none">
+                <Link
+                  href="/media"
+                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
+                  role="menuitem"
+                >
+                  Media
+                </Link>
+              </li>
+              <li role="none">
+                <Link
                   href="/contact"
-                  className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-md font-bold transition-colors"
+                  className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-md font-bold transition-all duration-200"
                   role="menuitem"
                 >
                   {t.nav.contact}
@@ -261,7 +279,7 @@ const Navbar = () => {
             <li role="none">
               <Link
                 href="/"
-                className="navbar-link text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
                 role="menuitem"
               >
                 {t.nav.home}
@@ -270,7 +288,7 @@ const Navbar = () => {
             <li role="none">
               <Link
                 href="/about"
-                className="navbar-link text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
                 role="menuitem"
               >
                 {t.nav.about}
@@ -281,7 +299,7 @@ const Navbar = () => {
                 onClick={() =>
                   setIsServicesDropdownOpen(!isServicesDropdownOpen)
                 }
-                className="navbar-link text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-base font-medium transition-colors w-full text-left flex items-center justify-between"
+                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white px-3 py-2 rounded-md text-base font-medium transition-all duration-200 w-full text-left flex items-center justify-between"
                 role="menuitem"
               >
                 {t.nav.services}
@@ -346,8 +364,26 @@ const Navbar = () => {
             </li>
             <li role="none">
               <Link
+                href="/resources"
+                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                role="menuitem"
+              >
+                Resources
+              </Link>
+            </li>
+            <li role="none">
+              <Link
+                href="/media"
+                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
+                role="menuitem"
+              >
+                Media
+              </Link>
+            </li>
+            <li role="none">
+              <Link
                 href="/contact"
-                className="navbar-link text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                className="navbar-link text-gray-600 hover:bg-[#700000] hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-200"
                 role="menuitem"
               >
                 {t.nav.contact}

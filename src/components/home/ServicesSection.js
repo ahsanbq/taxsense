@@ -37,9 +37,12 @@ export default function ServicesSection() {
     "/service/vat-consultancy.webp", // VAT Consultancy
     "/service/company-registration.jpg", // Company Registration
     "/service/trademark-registration.jfif", // Trade License & Trademark
+    "/service/tax-advisory.webp", // TIN & BIN Services (excluded - placeholder)
     "/service/irc-erc.png", // IRC & ERC Services
-    "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop", // Accounting & Software
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop", // Business Audit
+    "/service/accounting-software.jfif", // Accounting & Software Implementation
+    "/service/business-audit.png", // Business Audit
+    "/service/tax-advisory.webp", // Financial Audit (excluded - placeholder)
+    "/service/vat-consultancy.webp", // RJSC, VAT & Tax Return (excluded - placeholder)
   ];
 
   // Function to get the correct navigation slug for a service
@@ -86,7 +89,11 @@ export default function ServicesSection() {
   // Map servicesWithOther to their corresponding images (preserve original image mapping if available)
   const serviceImagesFor = servicesWithOther.map((s) => {
     const origIndex = t.services.items.findIndex((it) => it.title === s.title);
-    return serviceImages[origIndex] || serviceImages[0];
+    if (origIndex >= 0 && origIndex < serviceImages.length) {
+      return serviceImages[origIndex];
+    }
+    // For "Other Service" card, use other.webp
+    return "/service/other.webp";
   });
 
   // Split services into groups for layout: 4 + 4 + 2 (centered)

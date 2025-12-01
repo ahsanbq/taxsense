@@ -5,49 +5,125 @@ export default function PricingPlansSection() {
   const { t } = useLanguage();
   const packages = [
     {
-      title: "Trade License",
-      price: "৳5K",
-      priceNote: "(Starting Price)",
-      description:
-        "Complete trade license solutions for various business types",
+      title: "Tax Advisory",
+      price: "৳2,000",
+      priceNote: "Starting From",
+      description: "Comprehensive tax planning and compliance solutions",
       features: [
-        "Accessories",
-        "E-Commerce",
-        "Electric & Electronics",
-        "Pharmacy & Store",
-        "And More",
+        "Tax Planning & Strategic Advisory",
+        "Individual & Corporate Tax Return",
+        "Expert Tax Advisory",
+        "Tax Assessment & Appeal Support",
+        "Withholding Tax (AIT) Management",
       ],
-      popular: false,
+      slug: "tax-advisory",
+      icon: "💰",
+    },
+    {
+      title: "VAT Consultancy",
+      price: "Negotiable",
+      priceNote: "",
+      description: "Complete VAT registration and compliance services",
+      features: [
+        "VAT (BIN) Registration",
+        "Monthly VAT Return Filing",
+        "VAT Advisory & Compliance",
+        "VAT Audit Support",
+        "VAT Planning & Strategy",
+      ],
+      slug: "vat-consultancy",
+      icon: "📊",
     },
     {
       title: "Company Registration",
-      price: "৳15K",
-      priceNote: "(Starting Price)",
-      description:
-        "Full company registration services for different business structures",
+      price: "৳12,000",
+      priceNote: "Starting From",
+      description: "Full company registration for all business structures",
       features: [
-        "Limited Company",
-        "One Person Company",
-        "Proprietorship",
-        "Joint Venture",
-        "Foundation / Society / Trust",
+        "Private Limited Company",
+        "One Person Company (OPC)",
+        "Partnership Firm",
+        "Foundation / Society",
+        "Trade License & TIN Support",
       ],
+      slug: "company-registration",
+      icon: "🏢",
       popular: true,
     },
     {
-      title: "IRC & ERC",
-      price: "৳15K",
-      priceNote: "(Starting Price)",
-      description:
-        "Complete IRC & ERC services with comprehensive documentation",
+      title: "Trade License",
+      price: "৳2,000",
+      priceNote: "Starting From",
+      description: "Trade license application and renewal services",
       features: [
-        "Chamber of Commerce Membership",
-        "Trade License",
-        "TIN",
-        "Memorandum of Article",
-        "Company Registration",
+        "New Trade License Application",
+        "Renewal of Trade License",
+        "Ownership/Address Change",
+        "Correction of Information",
+        "City Corporation Compliance",
       ],
-      popular: false,
+      slug: "trade-license-trademark-registration",
+      icon: "📄",
+    },
+    {
+      title: "Trademark Registration",
+      price: "৳12,000",
+      priceNote: "Starting From",
+      description: "Protect your brand with trademark registration",
+      features: [
+        "Trademark Search & Check",
+        "Application Filing & DPDT Submission",
+        "Trademark Renewal",
+        "Legal Follow-up Support",
+        "Brand Protection Advisory",
+      ],
+      slug: "trade-license-trademark-registration",
+      icon: "®️",
+    },
+    {
+      title: "IRC & ERC Services",
+      price: "৳10,000",
+      priceNote: "Starting From",
+      description: "Import and export registration certificates",
+      features: [
+        "New IRC & ERC Application",
+        "Renewal & Amendment",
+        "Documentation Support",
+        "Bank Endorsement",
+        "Trade Compliance Advisory",
+      ],
+      slug: "irc-erc",
+      icon: "🌐",
+    },
+    {
+      title: "Accounting Service",
+      price: "Negotiable",
+      priceNote: "",
+      description: "Accounting services and software implementation",
+      features: [
+        "Full Accounting & Bookkeeping",
+        "Financial Statement Preparation",
+        "Software Setup (Tally, QuickBooks)",
+        "Payroll & Expense Management",
+        "NBR Compliance Advisory",
+      ],
+      slug: "accounting-service",
+      icon: "💻",
+    },
+    {
+      title: "Business Audit",
+      price: "Negotiable",
+      priceNote: "",
+      description: "Comprehensive business audit services",
+      features: [
+        "Statutory Audit for Companies",
+        "Internal & Management Audit",
+        "Compliance Audit (Tax, VAT)",
+        "Risk Assessment & Control",
+        "Financial Reporting Support",
+      ],
+      slug: "business-audit",
+      icon: "🔍",
     },
   ];
 
@@ -68,51 +144,77 @@ export default function PricingPlansSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {t.pricing.plans.map((pkg, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`relative bg-[#700000] rounded-2xl shadow-lg hover:bg-[#a61e2a] hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                index === 1
+              className={`relative bg-[#700000] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col ${
+                pkg.popular
                   ? "ring-2 ring-white border-white/20"
                   : "border border-primary/20"
               }`}
+              style={{ minHeight: "450px" }}
             >
-              <div className="p-8">
-                {/* Header */}
-                <div className="text-center mb-8 min-h-[120px] flex flex-col justify-center">
-                  <h3 className="text-2xl font-bold text-white mb-4">
+              {pkg.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                  <span className="bg-white text-[#700000] px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                    POPULAR
+                  </span>
+                </div>
+              )}
+              <div className="p-4 flex flex-col flex-1">
+                {/* Icon - Fixed height */}
+                <div className="text-center mb-1.5">
+                  <div className="text-2xl">{pkg.icon}</div>
+                </div>
+
+                {/* Title - Fixed height */}
+                <div
+                  className="text-center mb-1.5"
+                  style={{ minHeight: "42px" }}
+                >
+                  <h3 className="text-base font-bold text-white leading-tight">
                     {pkg.title}
                   </h3>
-                  {/* Pricing Display */}
-                  {index === 0 ? (
-                    <div>
-                      <span className="text-4xl font-bold text-white">
-                        Negotiable
+                </div>
+
+                {/* Description - Fixed height */}
+                <div className="text-center mb-2" style={{ minHeight: "32px" }}>
+                  <p className="text-white/80 text-xs leading-tight">
+                    {pkg.description}
+                  </p>
+                </div>
+
+                {/* Pricing Display - Fixed height */}
+                <div className="text-center mb-3" style={{ minHeight: "60px" }}>
+                  {pkg.priceNote === "" ? (
+                    <div className="flex flex-col justify-center h-full">
+                      <span className="text-xl font-bold text-white">
+                        {pkg.price}
                       </span>
                     </div>
                   ) : (
-                    <>
-                      <div className="mb-3">
-                        <span className="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider">
-                          Starting From
+                    <div className="flex flex-col justify-center h-full">
+                      <div className="mb-1">
+                        <span className="inline-block bg-white/20 text-white px-2 py-0.5 rounded-full text-xs font-medium uppercase tracking-wider">
+                          {pkg.priceNote}
                         </span>
                       </div>
                       <div>
-                        <span className="text-4xl font-bold text-white">
+                        <span className="text-xl font-bold text-white">
                           {pkg.price}
                         </span>
                       </div>
-                    </>
+                    </div>
                   )}
                 </div>
 
-                {/* Features */}
-                <div className="space-y-4 mb-8">
+                {/* Features - Flexible height with consistent spacing */}
+                <div className="space-y-1.5 flex-1">
                   {pkg.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start">
                       <svg
-                        className="w-5 h-5 text-white mt-0.5 mr-3 flex-shrink-0"
+                        className="w-3 h-3 text-white mt-0.5 mr-1.5 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -124,15 +226,21 @@ export default function PricingPlansSection() {
                           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
-                      <span className="text-white">{feature}</span>
+                      <span className="text-white text-xs leading-tight">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
 
-                {/* CTA Button */}
-                <button className="w-full py-3 px-6 rounded-xl font-semibold cursor-pointer transition-all duration-300 bg-[#700000] hover:bg-[#8b1f1f] text-white shadow-lg hover:shadow-xl">
-                  Get Quote
-                </button>
+                {/* CTA Button - Always at bottom */}
+                <div className="mt-2">
+                  <Link href={`/services/${pkg.slug}`}>
+                    <button className="w-full py-1.5 px-3 rounded-xl font-semibold cursor-pointer transition-all duration-300 bg-white text-[#700000] hover:bg-[#700000] hover:text-white shadow-lg hover:shadow-xl text-xs border-2 border-transparent hover:border-white">
+                      Get Quote
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
