@@ -36,10 +36,10 @@ export default function ServicesSection() {
     "/service/tax-advisory.webp", // Tax Advisory
     "/service/vat-consultancy.webp", // VAT Consultancy
     "/service/company-registration.jpg", // Company Registration
-    "/service/trademark-registration.jfif", // Trade License & Trademark
+    "/service/trademark-registration.jpg", // Trade License & Trademark
     "/service/tax-advisory.webp", // TIN & BIN Services (excluded - placeholder)
     "/service/irc-erc.png", // IRC & ERC Services
-    "/service/accounting-software.jfif", // Accounting & Software Implementation
+    "/service/accounting-software.jpg", // Accounting & Software Implementation
     "/service/business-audit.png", // Business Audit
     "/service/tax-advisory.webp", // Financial Audit (excluded - placeholder)
     "/service/vat-consultancy.webp", // RJSC, VAT & Tax Return (excluded - placeholder)
