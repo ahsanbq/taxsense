@@ -435,7 +435,10 @@ const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
   };
 
   return (
-    <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20 transform hover:-translate-y-1 flex flex-col h-full">
+    <div
+      onClick={handleReadMore}
+      className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20 transform hover:-translate-y-1 flex flex-col h-full cursor-pointer"
+    >
       {/* Image Section */}
       <div className="relative h-48 overflow-hidden">
         <Image

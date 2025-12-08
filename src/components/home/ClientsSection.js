@@ -69,7 +69,7 @@ export default function ClientsSection() {
   };
 
   return (
-    <section className="relative py-20 bg-gray-50">
+    <section className="relative py-20 bg-red-50">
       {/* Curved Divider Top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg
@@ -170,23 +170,23 @@ export default function ClientsSection() {
 
           {/* Sliding container */}
           <div
-            className="flex space-x-12 transition-transform duration-500 ease-in-out"
+            className="flex gap-12 transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${currentSlide * 208}px)`, // 208px = 160px width + 48px gap
+              transform: `translateX(-${currentSlide * 220}px)`, // 220px = 160px width + 60px gap
             }}
           >
             {duplicatedClients.map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="flex-shrink-0 w-40 h-40 flex items-center justify-center hover:shadow-md transition-shadow duration-300 group p-4"
+                className="flex-shrink-0 w-40 h-32 flex items-center justify-center  hover:shadow-md transition-shadow duration-300 p-4"
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="max-w-full max-h-full object-contain scale-150 transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-105"
+                  className="max-w-full max-h-full scale-125 object-contain transition-transform duration-300 hover:scale-105"
                   style={{
-                    maxWidth: "190px",
-                    maxHeight: "100px",
+                    maxWidth: "140px",
+                    maxHeight: "80px",
                   }}
                 />
               </div>

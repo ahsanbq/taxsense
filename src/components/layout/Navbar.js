@@ -13,18 +13,50 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Services data with slugs (titles will be localized from translations)
+  // Services data with slugs and titles (must match ServicesSection exactly)
   // Matches the filtered services shown on homepage and /services page
   // Excludes: TIN & BIN, Financial Audit, RJSC services
   const servicesData = [
-    { slug: "tax-advisory" },
-    { slug: "vat-consultancy" },
-    { slug: "company-registration" },
-    { slug: "trade-license-trademark-registration" },
-    { slug: "irc-erc" },
-    { slug: "accounting-service" },
-    { slug: "business-audit" },
-    { slug: "other-services" },
+    { 
+      slug: "tax-advisory",
+      titleEn: "Tax Advisory",
+      titleBn: "ট্যাক্স পরামর্শ"
+    },
+    { 
+      slug: "vat-consultancy",
+      titleEn: "VAT Consultancy",
+      titleBn: "ভ্যাট কনসালটেন্সি"
+    },
+    { 
+      slug: "company-registration",
+      titleEn: "Company Registration",
+      titleBn: "কোম্পানি নিবন্ধন"
+    },
+    { 
+      slug: "trade-license-trademark-registration",
+      titleEn: "Trade License & Trademark Registration",
+      titleBn: "ট্রেড লাইসেন্স ও ট্রেডমার্ক নিবন্ধন"
+    },
+    { 
+      slug: "irc-erc",
+      titleEn: "IRC & ERC Services",
+      titleBn: "আইআরসি ও ইআরসি সেবা"
+    },
+    { 
+      slug: "accounting-service",
+      titleEn: "Accounting Service & Software Implementation",
+      titleBn: "অ্যাকাউন্টিং সেবা ও সফটওয়্যার বাস্তবায়ন"
+    },
+    { 
+      slug: "business-audit",
+      titleEn: "Business Audit",
+      titleBn: "ব্যবসায়িক নিরীক্ষা"
+    },
+    { 
+      slug: "other-services",
+      titleEn: "Other Services",
+      titleBn: "অন্যান্য সেবা"
+    },
   ];
 
   return (
@@ -114,48 +146,15 @@ const Navbar = () => {
                   onMouseEnter={() => setIsServicesDropdownOpen(true)}
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
                 >
-                  {servicesData.map((service, index) => {
-                    // For "other-services", use hardcoded title since it's not in translations
-                    let localizedTitle;
-                    if (service.slug === "other-services") {
-                      localizedTitle =
-                        language === "bn" ? "অন্যান্য সেবা" : "Other Services";
-                    } else {
-                      // Localized title lookup: fall back to English slug-title when translations don't match
-                      localizedTitle =
-                        (t.services &&
-                          t.services.items &&
-                          t.services.items[index] &&
-                          t.services.items[index].title) ||
-                        // fallback mapping for rare mismatches
-                        {
-                          "tax-advisory": "Tax Advisory",
-                          "vat-consultancy": "VAT Consultancy",
-                          "company-registration": "Company Registration",
-                          "trade-license-trademark-registration":
-                            "Trade License & Trademark Registration",
-                          "tin-bin": "TIN & BIN Services",
-                          "irc-erc": "IRC & ERC Services",
-                          "accounting-service":
-                            "Accounting Service & Software Implementation",
-                          "business-audit": "Business Audit",
-                          audit: "Financial Audit",
-                          "rjsc-return-vat-withholding":
-                            "RJSC, VAT & Tax Return Services",
-                        }[service.slug] ||
-                        service.slug;
-                    }
-
-                    return (
-                      <Link
-                        key={index}
-                        href={`/services/${service.slug}`}
-                        className="block px-4 py-3 text-gray-700 hover:bg-[#8b1f1f] hover:text-white focus:bg-[#8b1f1f] focus:text-white focus:outline-none transition-colors duration-200 rounded-md mx-2 my-1 font-medium cursor-pointer"
-                      >
-                        {localizedTitle}
-                      </Link>
-                    );
-                  })}
+                  {servicesData.map((service, index) => (
+                    <Link
+                      key={index}
+                      href={`/services/${service.slug}`}
+                      className="block px-4 py-3 text-gray-700 hover:bg-[#8b1f1f] hover:text-white focus:bg-[#8b1f1f] focus:text-white focus:outline-none transition-colors duration-200 rounded-md mx-2 my-1 font-medium cursor-pointer"
+                    >
+                      {language === "bn" ? service.titleBn : service.titleEn}
+                    </Link>
+                  ))}
                 </div>
               </li>
               <li role="none">
@@ -366,47 +365,16 @@ const Navbar = () => {
                   isServicesDropdownOpen ? "block" : "hidden"
                 } ml-4 mt-2 space-y-2`}
               >
-                {servicesData.map((service, index) => {
-                  // For "other-services", use hardcoded title since it's not in translations
-                  let localizedTitle;
-                  if (service.slug === "other-services") {
-                    localizedTitle =
-                      language === "bn" ? "অন্যান্য সেবা" : "Other Services";
-                  } else {
-                    localizedTitle =
-                      (t.services &&
-                        t.services.items &&
-                        t.services.items[index] &&
-                        t.services.items[index].title) ||
-                      {
-                        "tax-advisory": "Tax Advisory",
-                        "vat-consultancy": "VAT Consultancy",
-                        "company-registration": "Company Registration",
-                        "trade-license-trademark-registration":
-                          "Trade License & Trademark Registration",
-                        "tin-bin": "TIN & BIN Services",
-                        "irc-erc": "IRC & ERC Services",
-                        "accounting-service":
-                          "Accounting Service & Software Implementation",
-                        "business-audit": "Business Audit",
-                        audit: "Financial Audit",
-                        "rjsc-return-vat-withholding":
-                          "RJSC, VAT & Tax Return Services",
-                      }[service.slug] ||
-                      service.slug;
-                  }
-
-                  return (
-                    <Link
-                      key={index}
-                      href={`/services/${service.slug}`}
-                      className="block px-3 py-2 text-gray-600 hover:bg-[#8b1f1f] hover:text-white focus:bg-[#8b1f1f] focus:text-white focus:outline-none transition-colors duration-200 rounded-md font-medium cursor-pointer"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {localizedTitle}
-                    </Link>
-                  );
-                })}
+                {servicesData.map((service, index) => (
+                  <Link
+                    key={index}
+                    href={`/services/${service.slug}`}
+                    className="block px-3 py-2 text-gray-600 hover:bg-[#8b1f1f] hover:text-white focus:bg-[#8b1f1f] focus:text-white focus:outline-none transition-colors duration-200 rounded-md font-medium cursor-pointer"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {language === "bn" ? service.titleBn : service.titleEn}
+                  </Link>
+                ))}
               </div>
             </li>
             <li role="none">
