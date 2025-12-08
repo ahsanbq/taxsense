@@ -77,16 +77,16 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-20 items-center">
             {/* Left Side - Text Content */}
             <div className="text-white order-2 lg:order-1 relative z-30">
-              <div className="max-w-xl">
-                <h1 className="text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 animate-fadeInUp leading-tight">
+              <div className="max-w-2xl">
+                <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fadeInUp leading-[1.1]">
                   {t.hero.title}
                 </h1>
-                <p className="text-gray-700 text-sm sm:text-base md:text-lg mb-3 sm:mb-4 leading-relaxed animate-fadeInUp animation-delay-200">
+                <p className="text-gray-700 text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed animate-fadeInUp animation-delay-200">
                   {t.hero.description}
                 </p>
 
                 {/* Mobile View images */}
-                <div className="flex justify-center mb-3 lg:hidden">
+                <div className="flex justify-center mb-6 lg:hidden">
                   <div className="w-full max-w-[280px] rounded-lg overflow-hidden">
                     <Image
                       src="/Hero/hero2-removebg.png"
@@ -100,15 +100,15 @@ export default function HeroSection() {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 animate-fadeInUp animation-delay-400">
+                <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp animation-delay-400">
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center justify-center bg-[#700000] text-white px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:bg-[#8b1f1f] cursor-pointer"
+                    className="group inline-flex items-center justify-center bg-[#700000] text-white px-8 py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:bg-[#8b1f1f] cursor-pointer"
                     aria-label="Contact TaxSense for professional tax consultation"
                   >
                     {t.hero.cta}
                     <svg
-                      className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform"
+                      className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -125,12 +125,12 @@ export default function HeroSection() {
 
                   <Link
                     href="/about"
-                    className="group inline-flex items-center justify-center bg-white text-[#700000] border border-[#700000] px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-[#fdecec] cursor-pointer"
+                    className="group inline-flex items-center justify-center bg-white text-[#700000] border-2 border-[#700000] px-8 py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 hover:bg-[#fdecec] cursor-pointer"
                     aria-label="Learn more about TaxSense services"
                   >
                     {t.hero.learnMore}
                     <svg
-                      className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform"
+                      className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -149,7 +149,7 @@ export default function HeroSection() {
             </div>
 
             {/* Desktop View: floating/overlapping images */}
-            <div className="order-1 lg:order-2 hidden lg:block relative h-[320px] xl:h-[380px] w-full">
+            <div className="order-1 lg:order-2 hidden lg:block relative h-[320px] xl:h-[380px] w-full -mt-24">
               <div className="absolute top-2/4 right-20 w-72 xl:w-80 h-[320px] xl:h-[380px] group z-20 animate-float">
                 <div className="relative h-full w-full rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-none overflow-hidden transform  hover:rotate-0 transition-all duration-500 bg-[#700000]">
                   <Image

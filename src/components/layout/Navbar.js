@@ -14,17 +14,17 @@ const Navbar = () => {
   };
 
   // Services data with slugs (titles will be localized from translations)
+  // Matches the filtered services shown on homepage and /services page
+  // Excludes: TIN & BIN, Financial Audit, RJSC services
   const servicesData = [
     { slug: "tax-advisory" },
     { slug: "vat-consultancy" },
     { slug: "company-registration" },
     { slug: "trade-license-trademark-registration" },
-    { slug: "tin-bin" },
     { slug: "irc-erc" },
     { slug: "accounting-service" },
     { slug: "business-audit" },
-    { slug: "audit" },
-    { slug: "rjsc-return-vat-withholding" },
+    { slug: "other-services" },
   ];
 
   return (
@@ -115,29 +115,36 @@ const Navbar = () => {
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
                 >
                   {servicesData.map((service, index) => {
-                    // Localized title lookup: fall back to English slug-title when translations don't match
-                    const localizedTitle =
-                      (t.services &&
-                        t.services.items &&
-                        t.services.items[index] &&
-                        t.services.items[index].title) ||
-                      // fallback mapping for rare mismatches
-                      {
-                        "tax-advisory": "Tax Advisory",
-                        "vat-consultancy": "VAT Consultancy",
-                        "company-registration": "Company Registration",
-                        "trade-license-trademark-registration":
-                          "Trade License & Trademark Registration",
-                        "tin-bin": "TIN & BIN Services",
-                        "irc-erc": "IRC & ERC Services",
-                        "accounting-service":
-                          "Accounting Service & Software Implementation",
-                        "business-audit": "Business Audit",
-                        audit: "Financial Audit",
-                        "rjsc-return-vat-withholding":
-                          "RJSC, VAT & Tax Return Services",
-                      }[service.slug] ||
-                      service.slug;
+                    // For "other-services", use hardcoded title since it's not in translations
+                    let localizedTitle;
+                    if (service.slug === "other-services") {
+                      localizedTitle =
+                        language === "bn" ? "অন্যান্য সেবা" : "Other Services";
+                    } else {
+                      // Localized title lookup: fall back to English slug-title when translations don't match
+                      localizedTitle =
+                        (t.services &&
+                          t.services.items &&
+                          t.services.items[index] &&
+                          t.services.items[index].title) ||
+                        // fallback mapping for rare mismatches
+                        {
+                          "tax-advisory": "Tax Advisory",
+                          "vat-consultancy": "VAT Consultancy",
+                          "company-registration": "Company Registration",
+                          "trade-license-trademark-registration":
+                            "Trade License & Trademark Registration",
+                          "tin-bin": "TIN & BIN Services",
+                          "irc-erc": "IRC & ERC Services",
+                          "accounting-service":
+                            "Accounting Service & Software Implementation",
+                          "business-audit": "Business Audit",
+                          audit: "Financial Audit",
+                          "rjsc-return-vat-withholding":
+                            "RJSC, VAT & Tax Return Services",
+                        }[service.slug] ||
+                        service.slug;
+                    }
 
                     return (
                       <Link
@@ -360,27 +367,34 @@ const Navbar = () => {
                 } ml-4 mt-2 space-y-2`}
               >
                 {servicesData.map((service, index) => {
-                  const localizedTitle =
-                    (t.services &&
-                      t.services.items &&
-                      t.services.items[index] &&
-                      t.services.items[index].title) ||
-                    {
-                      "tax-advisory": "Tax Advisory",
-                      "vat-consultancy": "VAT Consultancy",
-                      "company-registration": "Company Registration",
-                      "trade-license-trademark-registration":
-                        "Trade License & Trademark Registration",
-                      "tin-bin": "TIN & BIN Services",
-                      "irc-erc": "IRC & ERC Services",
-                      "accounting-service":
-                        "Accounting Service & Software Implementation",
-                      "business-audit": "Business Audit",
-                      audit: "Financial Audit",
-                      "rjsc-return-vat-withholding":
-                        "RJSC, VAT & Tax Return Services",
-                    }[service.slug] ||
-                    service.slug;
+                  // For "other-services", use hardcoded title since it's not in translations
+                  let localizedTitle;
+                  if (service.slug === "other-services") {
+                    localizedTitle =
+                      language === "bn" ? "অন্যান্য সেবা" : "Other Services";
+                  } else {
+                    localizedTitle =
+                      (t.services &&
+                        t.services.items &&
+                        t.services.items[index] &&
+                        t.services.items[index].title) ||
+                      {
+                        "tax-advisory": "Tax Advisory",
+                        "vat-consultancy": "VAT Consultancy",
+                        "company-registration": "Company Registration",
+                        "trade-license-trademark-registration":
+                          "Trade License & Trademark Registration",
+                        "tin-bin": "TIN & BIN Services",
+                        "irc-erc": "IRC & ERC Services",
+                        "accounting-service":
+                          "Accounting Service & Software Implementation",
+                        "business-audit": "Business Audit",
+                        audit: "Financial Audit",
+                        "rjsc-return-vat-withholding":
+                          "RJSC, VAT & Tax Return Services",
+                      }[service.slug] ||
+                      service.slug;
+                  }
 
                   return (
                     <Link

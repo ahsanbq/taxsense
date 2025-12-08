@@ -36,21 +36,21 @@ export default function WhoWeAreSection() {
           {/* Left Side - Text Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium">
+              <span className="inline-block bg-primary/10 text-black px-5 py-2.5 rounded-full text-base font-semibold">
                 {t.whoWeAre.title}
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
                 {t.whoWeAre.subtitle}
               </h2>
             </div>
 
-            <div className="space-y-4 text-lg text-black leading-relaxed">
+            <div className="space-y-4 text-lg md:text-xl text-black/80 leading-relaxed">
               <p>{t.whoWeAre.description}</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/about">
-                <button className="bg-[#700000] hover:bg-[#8b1f1f] text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center cursor-pointer">
+                <button className="bg-[#700000] hover:bg-[#8b1f1f] text-white px-8 py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center cursor-pointer">
                   {t.whoWeAre.cta}
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
@@ -69,7 +69,7 @@ export default function WhoWeAreSection() {
               </Link>
 
               <Link href="/contact">
-                <button className="border border-[#700000] hover:bg-[#8b1f1f] hover:text-white bg-transparent text-[#700000] px-8 py-3 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer overflow-hidden transform-gpu">
+                <button className="border-2 border-[#700000] hover:bg-[#8b1f1f] hover:text-white bg-transparent text-[#700000] px-8 py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 inline-flex items-center justify-center cursor-pointer overflow-hidden transform-gpu">
                   Get In Touch
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"

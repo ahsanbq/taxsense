@@ -222,6 +222,7 @@ export default function Services() {
     "IRC & ERC Services": "irc-erc",
     "Accounting Service & Software Implementation": "accounting-service",
     "Business Audit": "business-audit",
+    "Other Service": "other-services",
     "ট্যাক্স পরামর্শ": "tax-advisory",
     "ভ্যাট পরামর্শ": "vat-consultancy",
     "ভ্যাট কনসালটেন্সি": "vat-consultancy",
@@ -231,6 +232,7 @@ export default function Services() {
     "আইআরসি ও ইআরসি সেবা": "irc-erc",
     "অ্যাকাউন্টিং সেবা ও সফটওয়্যার বাস্তবায়ন": "accounting-service",
     "ব্যবসায়িক নিরীক্ষা": "business-audit",
+    "অন্যান্য সেবা": "other-services",
   };
 
   // Service images

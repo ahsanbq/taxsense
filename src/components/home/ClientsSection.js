@@ -112,10 +112,10 @@ export default function ClientsSection() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-primary/10 text-black px-5 py-2.5 rounded-full text-base font-semibold mb-6">
             {t.clients.subtitle}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             {t.clients.title}
           </h2>
         </div>

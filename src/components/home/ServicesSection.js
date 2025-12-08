@@ -17,6 +17,7 @@ export default function ServicesSection() {
     "IRC & ERC Services": "irc-erc",
     "Accounting Service & Software Implementation": "accounting-service",
     "Business Audit": "business-audit",
+    "Other Service": "other-services",
 
     // Bengali mappings
     "ট্যাক্স পরামর্শ": "tax-advisory",
@@ -29,6 +30,7 @@ export default function ServicesSection() {
     "আইআরসি ও ইআরসি সেবা": "irc-erc",
     "অ্যাকাউন্টিং সেবা ও সফটওয়্যার বাস্তবায়ন": "accounting-service",
     "ব্যবসায়িক নিরীক্ষা": "business-audit",
+    "অন্যান্য সেবা": "other-services",
   };
 
   // Service data with updated image URLs for new services
@@ -106,13 +108,13 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <span className="text-black inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="text-black inline-block bg-primary/10 text-primary px-5 py-2.5 rounded-full text-base font-semibold mb-6">
             {t.services.subtitle}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
             {t.services.title}
           </h2>
-          <p className="text-l text-black max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-black/80 max-w-4xl mx-auto leading-relaxed">
             {t.services.description}
           </p>
         </div>

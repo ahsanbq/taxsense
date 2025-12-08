@@ -168,13 +168,13 @@ export default function PricingPlansSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-primary/10 text-black px-5 py-2.5 rounded-full text-base font-semibold mb-6">
             {t.pricing.subtitle}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
             {t.pricing.title}
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-black/80 max-w-4xl mx-auto leading-relaxed">
             {t.pricing.description}
           </p>
         </div>
@@ -205,39 +205,36 @@ export default function PricingPlansSection() {
                 </div>
 
                 {/* Title - Fixed height */}
-                <div
-                  className="text-center mb-1.5"
-                  style={{ minHeight: "42px" }}
-                >
-                  <h3 className="text-base font-bold text-white leading-tight">
+                <div className="text-center mb-2" style={{ minHeight: "48px" }}>
+                  <h3 className="text-lg font-bold text-white leading-tight">
                     {pkg.title}
                   </h3>
                 </div>
 
                 {/* Description - Fixed height */}
-                <div className="text-center mb-2" style={{ minHeight: "32px" }}>
-                  <p className="text-white/80 text-xs leading-tight">
+                <div className="text-center mb-3" style={{ minHeight: "40px" }}>
+                  <p className="text-white/90 text-sm leading-relaxed">
                     {pkg.description}
                   </p>
                 </div>
 
                 {/* Pricing Display - Fixed height */}
-                <div className="text-center mb-3" style={{ minHeight: "60px" }}>
+                <div className="text-center mb-4" style={{ minHeight: "70px" }}>
                   {pkg.priceNote === "" ? (
                     <div className="flex flex-col justify-center h-full">
-                      <span className="text-xl font-bold text-white">
+                      <span className="text-2xl md:text-3xl font-bold text-white">
                         {pkg.price}
                       </span>
                     </div>
                   ) : (
                     <div className="flex flex-col justify-center h-full">
-                      <div className="mb-1">
-                        <span className="inline-block bg-white/20 text-white px-2 py-0.5 rounded-full text-xs font-medium uppercase tracking-wider">
+                      <div className="mb-2">
+                        <span className="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">
                           {pkg.priceNote}
                         </span>
                       </div>
                       <div>
-                        <span className="text-xl font-bold text-white">
+                        <span className="text-2xl md:text-3xl font-bold text-white">
                           {pkg.price}
                         </span>
                       </div>
@@ -246,11 +243,11 @@ export default function PricingPlansSection() {
                 </div>
 
                 {/* Features - Flexible height with consistent spacing */}
-                <div className="space-y-1.5 flex-1">
+                <div className="space-y-2 flex-1">
                   {pkg.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start">
                       <svg
-                        className="w-3 h-3 text-white mt-0.5 mr-1.5 flex-shrink-0"
+                        className="w-4 h-4 text-white mt-0.5 mr-2 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -262,7 +259,7 @@ export default function PricingPlansSection() {
                           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
-                      <span className="text-white text-xs leading-tight">
+                      <span className="text-white/95 text-sm leading-relaxed">
                         {feature}
                       </span>
                     </div>
@@ -270,9 +267,9 @@ export default function PricingPlansSection() {
                 </div>
 
                 {/* CTA Button - Always at bottom */}
-                <div className="mt-2">
+                <div className="mt-3">
                   <Link href={`/services/${pkg.slug}`}>
-                    <button className="w-full py-1.5 px-3 rounded-xl font-semibold cursor-pointer transition-all duration-300 bg-white text-[#700000] hover:bg-[#700000] hover:text-white shadow-lg hover:shadow-xl text-xs border-2 border-transparent hover:border-white">
+                    <button className="w-full py-3 px-4 rounded-xl font-semibold cursor-pointer transition-all duration-300 bg-white text-[#700000] hover:bg-[#700000] hover:text-white shadow-lg hover:shadow-xl text-sm md:text-base border-2 border-transparent hover:border-white">
                       Get Quote
                     </button>
                   </Link>
@@ -284,18 +281,18 @@ export default function PricingPlansSection() {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-8 rounded-2xl border border-black max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
+          <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-10 md:p-12 rounded-2xl border border-black max-w-5xl mx-auto">
+            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
               Need a Custom Solution?
             </h3>
-            <p className="text-lg text-black mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-black/80 mb-8 max-w-3xl mx-auto leading-relaxed">
               Can't find the perfect package? We offer customized solutions
               tailored to your specific business requirements.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/services">
-                <button className="group bg-[#700000] hover:bg-[#8b1f1f] text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg cursor-pointer">
+                <button className="group bg-[#700000] hover:bg-[#8b1f1f] text-white px-8 py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg cursor-pointer">
                   Explore All Packages
                   <svg
                     className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
