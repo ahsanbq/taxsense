@@ -110,11 +110,11 @@ const Footer = () => {
               {t.footer.services.items.map((service, index) => (
                 <li key={index}>
                   <Link
-                    href="/services"
+                    href={`/services/${service.slug}`}
                     className="text-white/80 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <span className="w-1.5 h-1.5 bg-white/60 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                    {service}
+                    {service.title}
                   </Link>
                 </li>
               ))}
@@ -283,7 +283,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-4">
               <p className="text-white/80 text-sm">
-                © {new Date().getFullYear()} Taxsense Ltd. {t.footer.copyright}
+                © {new Date().getFullYear()} TaxSense Ltd. {t.footer.copyright}
               </p>
             </div>
             <div className="flex items-center space-x-6">

@@ -283,11 +283,6 @@ export default function FAQSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-primary/10 text-black px-5 py-2.5 rounded-full text-base font-semibold mb-6">
-            {language === "bn"
-              ? "সচরাচর জিজ্ঞাসা"
-              : "Frequently Asked Questions"}
-          </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             {language === "bn"
               ? "আয়কর সম্পর্কিত প্রশ্ন ও উত্তর"

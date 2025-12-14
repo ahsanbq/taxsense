@@ -11,6 +11,8 @@ export const translations = {
       home: "Home",
       about: "About",
       services: "Services",
+      resources: "Resources",
+      media: "Media",
       contact: "Contact",
     },
     // Hero Section
@@ -28,6 +30,8 @@ export const translations = {
       subtitle: "Comprehensive Business Solutions",
       description:
         "We provide a wide range of professional services to help your business thrive and comply with all regulatory requirements.",
+      otherDescription:
+        "Specialized business licenses and regulatory approvals for various sectors including pharmaceuticals, aviation, fire safety, and chamber memberships.",
       items: [
         {
           title: "Tax Advisory",
@@ -45,9 +49,14 @@ export const translations = {
             "Complete company registration services including Limited Company, Partnership Firm, Foundation, Society and other business structures.",
         },
         {
-          title: "Trade License & Trademark Registration",
+          title: "Trade License",
           description:
-            "Comprehensive assistance in obtaining trade licenses and trademark registration for your business operations and brand protection.",
+            "Obtaining a Trade License is the first and most essential step to legally operate any business in Bangladesh with complete application and renewal support.",
+        },
+        {
+          title: "Trademark Registration",
+          description:
+            "Protect your brand's name, logo, slogan, or symbol under the Department of Patents, Designs & Trademarks (DPDT) with complete registration and renewal assistance.",
         },
         {
           title: "TIN & BIN Services",
@@ -86,7 +95,7 @@ export const translations = {
       title: "Who We Are",
       subtitle: "Your Trusted Financial Partners",
       description:
-        "At Taxsense Ltd., we are a team of dedicated professionals committed to providing exceptional tax and business advisory services. With years of experience in the industry, we understand the complexities of financial regulations and business requirements.",
+        "At TaxSense Ltd., we are a team of dedicated professionals committed to providing exceptional tax and business advisory services. With years of experience in the industry, we understand the complexities of financial regulations and business requirements.",
       features: [
         "Expert Tax Professionals",
         "Comprehensive Business Solutions",
@@ -160,16 +169,20 @@ export const translations = {
       about: {
         title: "About Us",
         description:
-          "At Taxsense, we believe there is a better way to do tax preparation. It is a more valuable, less invasive way where clients are getting their desirable services regarding tax. Our experienced professionals will help you regarding these issues.",
+          "At TaxSense, we believe there is a better way to do tax preparation. It is a more valuable, less invasive way where clients are getting their desirable services regarding tax. Our experienced professionals will help you regarding these issues.",
       },
       services: {
         title: "Services",
         items: [
-          "Tax Advisory",
-          "VAT Consultancy",
-          "Business Advisory",
-          "Business Audit",
-          "Licensing Service",
+          { title: "Tax Advisory", slug: "tax-advisory" },
+          { title: "VAT Consultancy", slug: "vat-consultancy" },
+          { title: "Company Registration", slug: "company-registration" },
+          { title: "Trade License", slug: "trade-license" },
+          { title: "Trademark Registration", slug: "trademark-registration" },
+          { title: "IRC & ERC", slug: "irc-erc" },
+          { title: "Accounting Service", slug: "accounting-service" },
+          { title: "Business Audit", slug: "business-audit" },
+          { title: "Other Services", slug: "other-services" },
         ],
       },
       resources: {
@@ -210,6 +223,8 @@ export const translations = {
       home: "হোম",
       about: "আমাদের সম্পর্কে",
       services: "সেবাসমূহ",
+      resources: "রিসোর্স",
+      media: "মিডিয়া",
       contact: "যোগাযোগ",
     },
     // Hero Section
@@ -227,6 +242,8 @@ export const translations = {
       subtitle: "ব্যাপক ব্যবসায়িক সমাধান",
       description:
         "আপনার ব্যবসাকে উন্নত করতে এবং সমস্ত নিয়ন্ত্রক প্রয়োজনীয়তা মেনে চলতে সাহায্য করার জন্য আমরা বিস্তৃত পেশাদার সেবা প্রদান করি।",
+      otherDescription:
+        "ফার্মাসিউটিক্যালস, এভিয়েশন, ফায়ার সেফটি এবং চেম্বার সদস্যপদসহ বিভিন্ন খাতের জন্য বিশেষায়িত ব্যবসায়িক লাইসেন্স ও নিয়ন্ত্রক অনুমোদন।",
       items: [
         {
           title: "ট্যাক্স পরামর্শ",
@@ -244,9 +261,14 @@ export const translations = {
             "লিমিটেড কোম্পানি, পার্টনারশিপ ফার্ম, ফাউন্ডেশন, সোসাইটি এবং অন্যান্য ব্যবসায়িক কাঠামো সহ সম্পূর্ণ কোম্পানি নিবন্ধন সেবা।",
         },
         {
-          title: "ট্রেড লাইসেন্স ও ট্রেডমার্ক নিবন্ধন",
+          title: "ট্রেড লাইসেন্স",
           description:
-            "আপনার ব্যবসায়িক কার্যক্রম এবং ব্র্যান্ড সুরক্ষার জন্য ট্রেড লাইসেন্স এবং ট্রেডমার্ক নিবন্ধন পেতে ব্যাপক সহায়তা।",
+            "বাংলাদেশে যেকোনো ব্যবসা পরিচালনার জন্য ট্রেড লাইসেন্স গ্রহণ করা প্রথম ও গুরুত্বপূর্ণ ধাপ। সম্পূর্ণ আবেদন ও নবায়ন সহায়তা সহ।",
+        },
+        {
+          title: "ট্রেডমার্ক নিবন্ধন",
+          description:
+            "ট্রেডমার্ক নিবন্ধনের মাধ্যমে ব্যবসার নাম, লোগো বা স্লোগানকে আইনি সুরক্ষা প্রদান করুন। DPDT-এর অধীনে সম্পূর্ণ নিবন্ধন ও নবায়ন সহায়তা।",
         },
         {
           title: "টিআইএন ও বিআইএন সেবা",
@@ -359,16 +381,20 @@ export const translations = {
       about: {
         title: "আমাদের সম্পর্কে",
         description:
-          "ট্যাক্সসেন্সে, আমরা বিশ্বাস করি যে ট্যাক্স প্রস্তুতির একটি ভাল উপায় রয়েছে। এটি একটি আরও মূল্যবান, কম আক্রমণাত্মক উপায় যেখানে ক্লায়েন্টরা ট্যাক্স সংক্রান্ত তাদের কাঙ্ক্ষিত সেবা পাচ্ছেন। আমাদের অভিজ্ঞ পেশাদাররা এই বিষয়গুলি নিয়ে আপনাকে সাহায্য করবেন।",
+          "TaxSense-এ, আমরা বিশ্বাস করি যে ট্যাক্স প্রস্তুতির একটি ভাল উপায় রয়েছে। এটি একটি আরও মূল্যবান, কম আক্রমণাত্মক উপায় যেখানে ক্লায়েন্টরা ট্যাক্স সংক্রান্ত তাদের কাঙ্ক্ষিত সেবা পাচ্ছেন। আমাদের অভিজ্ঞ পেশাদাররা এই বিষয়গুলি নিয়ে আপনাকে সাহায্য করবেন।",
       },
       services: {
         title: "সেবাসমূহ",
         items: [
-          "ট্যাক্স পরামর্শ",
-          "ভ্যাট পরামর্শ",
-          "ব্যবসায়িক পরামর্শ",
-          "ব্যবসায়িক নিরীক্ষা",
-          "লাইসেন্সিং সেবা",
+          { title: "ট্যাক্স পরামর্শ", slug: "tax-advisory" },
+          { title: "ভ্যাট পরামর্শ", slug: "vat-consultancy" },
+          { title: "কোম্পানি নিবন্ধন", slug: "company-registration" },
+          { title: "ট্রেড লাইসেন্স", slug: "trade-license" },
+          { title: "ট্রেডমার্ক নিবন্ধন", slug: "trademark-registration" },
+          { title: "আইআরসি ও ইআরসি", slug: "irc-erc" },
+          { title: "হিসাবরক্ষণ সেবা", slug: "accounting-service" },
+          { title: "ব্যবসায়িক অডিট", slug: "business-audit" },
+          { title: "অন্যান্য সেবা", slug: "other-services" },
         ],
       },
       resources: {

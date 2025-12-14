@@ -89,7 +89,7 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="firstName"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
+                      className="block text-sm font-semibold text-black mb-2"
                     >
                       First Name *
                     </label>
@@ -100,14 +100,14 @@ export default function Contact() {
                       required
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all text-black"
                       placeholder="John"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="lastName"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
+                      className="block text-sm font-semibold text-black mb-2"
                     >
                       Last Name *
                     </label>
@@ -118,7 +118,7 @@ export default function Contact() {
                       required
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all text-black"
                       placeholder="Doe"
                     />
                   </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-black mb-2"
                   >
                     Email Address *
                   </label>
@@ -138,7 +138,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all text-black"
                     placeholder="john.doe@example.com"
                   />
                 </div>
@@ -146,17 +146,18 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-black mb-2"
                   >
-                    Phone Number
+                    Phone Number *
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
+                    required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all text-black"
                     placeholder="+880 1XXX-XXXXXX"
                   />
                 </div>
@@ -164,7 +165,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-black mb-2"
                   >
                     Subject *
                   </label>
@@ -174,7 +175,7 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all text-black"
                   >
                     <option value="">Select a subject</option>
                     <option value="tax-advisory">Tax Advisory</option>
@@ -194,7 +195,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-black mb-2"
                   >
                     Message *
                   </label>
@@ -205,7 +206,7 @@ export default function Contact() {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#700000] focus:border-transparent transition-all resize-none text-black"
                     placeholder="Tell us about your inquiry..."
                   ></textarea>
                 </div>

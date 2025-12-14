@@ -206,7 +206,7 @@ export default function PricingPlansSection() {
 
                 {/* Title - Fixed height */}
                 <div className="text-center mb-2" style={{ minHeight: "48px" }}>
-                  <h3 className="text-lg font-bold text-white leading-tight">
+                  <h3 className="text-2xl font-bold text-white leading-tight">
                     {pkg.title}
                   </h3>
                 </div>

@@ -11,9 +11,8 @@ export default function ServicesSection() {
     "Tax Advisory": "tax-advisory",
     "VAT Consultancy": "vat-consultancy",
     "Company Registration": "company-registration",
-    "Trade License & Trademark Registration":
-      "trade-license-trademark-registration",
-
+    "Trade License": "trade-license",
+    "Trademark Registration": "trademark-registration",
     "IRC & ERC Services": "irc-erc",
     "Accounting Service & Software Implementation": "accounting-service",
     "Business Audit": "business-audit",
@@ -24,9 +23,8 @@ export default function ServicesSection() {
     "ভ্যাট পরামর্শ": "vat-consultancy",
     "ভ্যাট কনসালটেন্সি": "vat-consultancy",
     "কোম্পানি নিবন্ধন": "company-registration",
-    "ট্রেড লাইসেন্স ও ট্রেডমার্ক নিবন্ধন":
-      "trade-license-trademark-registration",
-
+    "ট্রেড লাইসেন্স": "trade-license",
+    "ট্রেডমার্ক নিবন্ধন": "trademark-registration",
     "আইআরসি ও ইআরসি সেবা": "irc-erc",
     "অ্যাকাউন্টিং সেবা ও সফটওয়্যার বাস্তবায়ন": "accounting-service",
     "ব্যবসায়িক নিরীক্ষা": "business-audit",
@@ -38,7 +36,8 @@ export default function ServicesSection() {
     "/service/tax-advisory.webp", // Tax Advisory
     "/service/vat-consultancy.webp", // VAT Consultancy
     "/service/company-registration.jpg", // Company Registration
-    "/service/trademark-registration.jpg", // Trade License & Trademark
+    "/service/trade-licence.png", // Trade License
+    "/service/trademark-registration.jpg", // Trademark Registration
     "/service/tax-advisory.webp", // TIN & BIN Services (excluded - placeholder)
     "/service/irc-erc.png", // IRC & ERC Services
     "/service/accounting-software.jpg", // Accounting & Software Implementation
@@ -98,19 +97,16 @@ export default function ServicesSection() {
     return "/service/other.webp";
   });
 
-  // Split services into groups for layout: 4 + 4 + 2 (centered)
+  // Split services into groups for layout: 4 + 4 + 1 (Other Service centered)
   const firstRowServices = servicesWithOther.slice(0, 4);
   const secondRowServices = servicesWithOther.slice(4, 8);
-  const lastRowServices = servicesWithOther.slice(8, 10);
+  const lastRowServices = servicesWithOther.slice(8, 9); // Only Other Service
 
   return (
     <section className="relative py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <span className="text-black inline-block bg-primary/10 text-primary px-5 py-2.5 rounded-full text-base font-semibold mb-6">
-            {t.services.subtitle}
-          </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
             {t.services.title}
           </h2>
@@ -153,9 +149,9 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Third Row - 2 Services (Centered) */}
+        {/* Third Row - 1 Service (Other Service Centered) */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
+          <div className="w-full max-w-sm">
             {lastRowServices.map((service, index) => (
               <ServiceCard
                 key={service.title}
@@ -306,10 +302,21 @@ const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
         </svg>
       );
     }
+    if (title.includes("Trade License") || title.includes("ট্রেড লাইসেন্স")) {
+      return (
+        <svg {...iconProps}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
+        </svg>
+      );
+    }
     if (
-      title.includes("Trade") ||
       title.includes("Trademark") ||
-      title.includes("ট্রেড")
+      title.includes("ট্রেডমার্ক")
     ) {
       return (
         <svg {...iconProps}>

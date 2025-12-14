@@ -12,9 +12,6 @@ export default function About() {
       <section className="relative bg-gradient-to-br from-gray-100 via-red-300 to-[#A21B21] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <span className="inline-block bg-white/20 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
-              About TaxSense Ltd
-            </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
               Professional Tax Consultancy
               <br />
@@ -35,9 +32,6 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
               <div className="space-y-4">
-                <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium">
-                  Our Journey
-                </span>
                 <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
                   Your Trusted Tax Partner Since Inception
                 </h2>
@@ -119,9 +113,6 @@ export default function About() {
       <section className="py-24 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
-              What Drives Us
-            </span>
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Mission & Vision
             </h2>
@@ -193,9 +184,6 @@ export default function About() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
-              Core Values
-            </span>
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               What We Stand For
             </h2>
@@ -358,9 +346,6 @@ export default function About() {
       {/* CTA Section */}
       <section className="py-24 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block bg-primary/10 text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
-            Get Started
-          </span>
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Ready to Work With Us?
           </h2>

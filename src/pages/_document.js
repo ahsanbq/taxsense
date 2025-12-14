@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Favicons */}
+        {/* Favicons - Optimized for Google Search */}
         <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico" />
         <link
           rel="icon"
@@ -17,6 +17,12 @@ export default function Document() {
           type="image/png"
           sizes="32x32"
           href="/favicon_io/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicon_io/android-chrome-192x192.png"
         />
         <link
           rel="apple-touch-icon"

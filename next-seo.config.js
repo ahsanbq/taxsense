@@ -71,16 +71,28 @@ const defaultSEO = {
   additionalLinkTags: [
     {
       rel: "icon",
-      href: "/favicon.ico",
+      href: "/favicon_io/favicon.ico",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: "/favicon_io/favicon-32x32.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "192x192",
+      href: "/favicon_io/android-chrome-192x192.png",
     },
     {
       rel: "apple-touch-icon",
-      href: "/apple-touch-icon.png",
+      href: "/favicon_io/apple-touch-icon.png",
       sizes: "180x180",
     },
     {
       rel: "manifest",
-      href: "/site.webmanifest",
+      href: "/favicon_io/site.webmanifest",
     },
   ],
 };

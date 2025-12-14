@@ -20,7 +20,8 @@ const Navbar = () => {
     { slug: "tax-advisory" },
     { slug: "vat-consultancy" },
     { slug: "company-registration" },
-    { slug: "trade-license-trademark-registration" },
+    { slug: "trade-license" },
+    { slug: "trademark-registration" },
     { slug: "irc-erc" },
     { slug: "accounting-service" },
     { slug: "business-audit" },
@@ -115,33 +116,41 @@ const Navbar = () => {
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
                 >
                   {servicesData.map((service, index) => {
-                    // For "other-services", use hardcoded title since it's not in translations
+                    // Map slug to exact index in t.services.items array
+                    const slugToTranslationIndex = {
+                      "tax-advisory": 0,
+                      "vat-consultancy": 1,
+                      "company-registration": 2,
+                      "trade-license": 3,
+                      "trademark-registration": 4,
+                      "irc-erc": 6,
+                      "accounting-service": 7,
+                      "business-audit": 8,
+                    };
+
                     let localizedTitle;
+                    
                     if (service.slug === "other-services") {
                       localizedTitle =
                         language === "bn" ? "অন্যান্য সেবা" : "Other Services";
                     } else {
-                      // Localized title lookup: fall back to English slug-title when translations don't match
+                      const translationIndex = slugToTranslationIndex[service.slug];
                       localizedTitle =
                         (t.services &&
                           t.services.items &&
-                          t.services.items[index] &&
-                          t.services.items[index].title) ||
-                        // fallback mapping for rare mismatches
+                          t.services.items[translationIndex] &&
+                          t.services.items[translationIndex].title) ||
+                        // fallback mapping
                         {
                           "tax-advisory": "Tax Advisory",
                           "vat-consultancy": "VAT Consultancy",
                           "company-registration": "Company Registration",
-                          "trade-license-trademark-registration":
-                            "Trade License & Trademark Registration",
-                          "tin-bin": "TIN & BIN Services",
+                          "trade-license": "Trade License",
+                          "trademark-registration": "Trademark Registration",
                           "irc-erc": "IRC & ERC Services",
                           "accounting-service":
                             "Accounting Service & Software Implementation",
                           "business-audit": "Business Audit",
-                          audit: "Financial Audit",
-                          "rjsc-return-vat-withholding":
-                            "RJSC, VAT & Tax Return Services",
                         }[service.slug] ||
                         service.slug;
                     }
@@ -168,7 +177,7 @@ const Navbar = () => {
                   }`}
                   role="menuitem"
                 >
-                  Resources
+                  {t.nav.resources}
                 </Link>
               </li>
               <li role="none">
@@ -181,7 +190,7 @@ const Navbar = () => {
                   }`}
                   role="menuitem"
                 >
-                  Media
+                  {t.nav.media}
                 </Link>
               </li>
               <li role="none">
@@ -367,31 +376,41 @@ const Navbar = () => {
                 } ml-4 mt-2 space-y-2`}
               >
                 {servicesData.map((service, index) => {
-                  // For "other-services", use hardcoded title since it's not in translations
+                  // Map slug to exact index in t.services.items array
+                  const slugToTranslationIndex = {
+                    "tax-advisory": 0,
+                    "vat-consultancy": 1,
+                    "company-registration": 2,
+                    "trade-license": 3,
+                    "trademark-registration": 4,
+                    "irc-erc": 6,
+                    "accounting-service": 7,
+                    "business-audit": 8,
+                  };
+
                   let localizedTitle;
+                  
                   if (service.slug === "other-services") {
                     localizedTitle =
                       language === "bn" ? "অন্যান্য সেবা" : "Other Services";
                   } else {
+                    const translationIndex = slugToTranslationIndex[service.slug];
                     localizedTitle =
                       (t.services &&
                         t.services.items &&
-                        t.services.items[index] &&
-                        t.services.items[index].title) ||
+                        t.services.items[translationIndex] &&
+                        t.services.items[translationIndex].title) ||
+                      // fallback mapping
                       {
                         "tax-advisory": "Tax Advisory",
                         "vat-consultancy": "VAT Consultancy",
                         "company-registration": "Company Registration",
-                        "trade-license-trademark-registration":
-                          "Trade License & Trademark Registration",
-                        "tin-bin": "TIN & BIN Services",
+                        "trade-license": "Trade License",
+                        "trademark-registration": "Trademark Registration",
                         "irc-erc": "IRC & ERC Services",
                         "accounting-service":
                           "Accounting Service & Software Implementation",
                         "business-audit": "Business Audit",
-                        audit: "Financial Audit",
-                        "rjsc-return-vat-withholding":
-                          "RJSC, VAT & Tax Return Services",
                       }[service.slug] ||
                       service.slug;
                   }
@@ -419,7 +438,7 @@ const Navbar = () => {
                 }`}
                 role="menuitem"
               >
-                Resources
+                {t.nav.resources}
               </Link>
             </li>
             <li role="none">
@@ -432,7 +451,7 @@ const Navbar = () => {
                 }`}
                 role="menuitem"
               >
-                Media
+                {t.nav.media}
               </Link>
             </li>
             <li role="none">

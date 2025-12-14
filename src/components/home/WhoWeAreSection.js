@@ -36,11 +36,8 @@ export default function WhoWeAreSection() {
           {/* Left Side - Text Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <span className="inline-block bg-primary/10 text-black px-5 py-2.5 rounded-full text-base font-semibold">
-                {t.whoWeAre.title}
-              </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
-                {t.whoWeAre.subtitle}
+                {t.whoWeAre.title}
               </h2>
             </div>
 
