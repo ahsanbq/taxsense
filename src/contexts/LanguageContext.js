@@ -95,7 +95,7 @@ export const translations = {
       title: "Who We Are",
       subtitle: "Your Trusted Financial Partners",
       description:
-        "At TaxSense Ltd., we are a team of dedicated professionals committed to providing exceptional tax and business advisory services. With years of experience in the industry, we understand the complexities of financial regulations and business requirements.",
+        "At Taxsense Ltd., we are a team of dedicated professionals committed to providing exceptional tax and business advisory services. With years of experience in the industry, we understand the complexities of financial regulations and business requirements.",
       features: [
         "Expert Tax Professionals",
         "Comprehensive Business Solutions",
@@ -169,7 +169,7 @@ export const translations = {
       about: {
         title: "About Us",
         description:
-          "At TaxSense, we believe there is a better way to do tax preparation. It is a more valuable, less invasive way where clients are getting their desirable services regarding tax. Our experienced professionals will help you regarding these issues.",
+          "At Taxsense, we believe there is a better way to do tax preparation. It is a more valuable, less invasive way where clients are getting their desirable services regarding tax. Our experienced professionals will help you regarding these issues.",
       },
       services: {
         title: "Services",
@@ -199,7 +199,7 @@ export const translations = {
           "Level-8, House No: 5A, Road No: 2E, Block-J, Baridhara R/A, Dhaka-1206.",
         phone: "01958-089808",
         email: "taxsenselimited@gmail.com",
-        website: "www.taxsenselimited.com",
+        website: "https://www.taxsenselimited.com/",
       },
       copyright: "All rights reserved.",
       legal: {
@@ -381,7 +381,7 @@ export const translations = {
       about: {
         title: "আমাদের সম্পর্কে",
         description:
-          "TaxSense-এ, আমরা বিশ্বাস করি যে ট্যাক্স প্রস্তুতির একটি ভাল উপায় রয়েছে। এটি একটি আরও মূল্যবান, কম আক্রমণাত্মক উপায় যেখানে ক্লায়েন্টরা ট্যাক্স সংক্রান্ত তাদের কাঙ্ক্ষিত সেবা পাচ্ছেন। আমাদের অভিজ্ঞ পেশাদাররা এই বিষয়গুলি নিয়ে আপনাকে সাহায্য করবেন।",
+          "Taxsense-এ, আমরা বিশ্বাস করি যে ট্যাক্স প্রস্তুতির একটি ভাল উপায় রয়েছে। এটি একটি আরও মূল্যবান, কম আক্রমণাত্মক উপায় যেখানে ক্লায়েন্টরা ট্যাক্স সংক্রান্ত তাদের কাঙ্ক্ষিত সেবা পাচ্ছেন। আমাদের অভিজ্ঞ পেশাদাররা এই বিষয়গুলি নিয়ে আপনাকে সাহায্য করবেন।",
       },
       services: {
         title: "সেবাসমূহ",
@@ -407,7 +407,7 @@ export const translations = {
           "লেভেল-৮, বাড়ি নং: ৫এ, রোড নং: ২ই, ব্লক-জে, বরিধারা আ/এ, ঢাকা-১২০৬।",
         phone: "০১৯৫৮-০৮৯৮০৮",
         email: "taxsenselimited@gmail.com",
-        website: "www.taxsenselimited.com",
+        website: "https://www.taxsenselimited.com/",
       },
       copyright: "সকল অধিকার সংরক্ষিত।",
       legal: {

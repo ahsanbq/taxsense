@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-white mb-4">
-                TaxSense Ltd.
+                Taxsense Ltd.
               </h3>
               <p className="text-white/90 leading-relaxed max-w-md">
                 {t.footer.about.description}
@@ -28,7 +28,7 @@ const Footer = () => {
               <a
                 href="https://www.facebook.com/taxsensebd"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="Follow TaxSense Ltd on Facebook"
+                aria-label="Follow Taxsense Ltd on Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -44,7 +44,7 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/company/taxsensebd"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="Follow TaxSense Ltd on LinkedIn"
+                aria-label="Follow Taxsense Ltd on LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -60,7 +60,7 @@ const Footer = () => {
               <a
                 href="mailto:taxsenselimited@gmail.com"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="Send email to TaxSense Ltd"
+                aria-label="Send email to Taxsense Ltd"
               >
                 <svg
                   className="w-5 h-5 text-white group-hover:scale-110 transition-transform"
@@ -80,7 +80,7 @@ const Footer = () => {
               <a
                 href="https://www.taxsense.com.bd"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300 group"
-                aria-label="Visit TaxSense Ltd website"
+                aria-label="Visit Taxsense Ltd website"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -283,7 +283,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-4">
               <p className="text-white/80 text-sm">
-                © {new Date().getFullYear()} TaxSense Ltd. {t.footer.copyright}
+                © {new Date().getFullYear()} Taxsense Ltd. {t.footer.copyright}
               </p>
             </div>
             <div className="flex items-center space-x-6">

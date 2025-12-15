@@ -90,7 +90,7 @@ export default function HeroSection() {
                   <div className="w-full max-w-[280px] rounded-lg overflow-hidden">
                     <Image
                       src="/Hero/hero2-removebg.png"
-                      alt="TaxSense Business Solutions - Modern office environment for professional tax consultancy"
+                      alt="Taxsense Business Solutions - Modern office environment for professional tax consultancy"
                       className="w-full h-auto object-cover"
                       width={280}
                       height={180}
@@ -104,7 +104,7 @@ export default function HeroSection() {
                   <Link
                     href="/contact"
                     className="group inline-flex items-center justify-center bg-[#700000] text-white px-8 py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:bg-[#8b1f1f] cursor-pointer"
-                    aria-label="Contact TaxSense for professional tax consultation"
+                    aria-label="Contact Taxsense for professional tax consultation"
                   >
                     {t.hero.cta}
                     <svg
@@ -126,7 +126,7 @@ export default function HeroSection() {
                   <Link
                     href="/about"
                     className="group inline-flex items-center justify-center bg-white text-[#700000] border-2 border-[#700000] px-8 py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 hover:bg-[#fdecec] cursor-pointer"
-                    aria-label="Learn more about TaxSense services"
+                    aria-label="Learn more about Taxsense services"
                   >
                     {t.hero.learnMore}
                     <svg
@@ -154,7 +154,7 @@ export default function HeroSection() {
                 <div className="relative h-full w-full rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-none overflow-hidden transform  hover:rotate-0 transition-all duration-500 bg-[#700000]">
                   <Image
                     src="/Hero/hero.png"
-                    alt="TaxSense Professional Tax Consultancy Services"
+                    alt="Taxsense Professional Tax Consultancy Services"
                     className="w-full h-full object-cover"
                     width={400}
                     height={380}
@@ -167,7 +167,7 @@ export default function HeroSection() {
                 <div className="relative h-full w-full rounded-tl-none rounded-tr-full rounded-bl-full rounded-br-full overflow-hidden transform -rotate-0 transition-all duration-500 bg-[#700000] pb-8 pl-8">
                   <Image
                     src="/Hero/hero2-removebg.png"
-                    alt="TaxSense Business Solutions Image"
+                    alt="Taxsense Business Solutions Image"
                     className="w-full scale-110 h-full object-cover "
                     width={400}
                     height={380}

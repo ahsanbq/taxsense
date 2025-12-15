@@ -450,7 +450,7 @@ const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
       <div className="relative h-48 overflow-hidden">
         <Image
           src={imageUrl}
-          alt={`${service.title} - TaxSense Ltd Professional Services`}
+          alt={`${service.title} - Taxsense Ltd Professional Services`}
           width={400}
           height={300}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

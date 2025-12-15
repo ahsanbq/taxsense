@@ -10,13 +10,13 @@ import FAQSection from "../components/home/FAQSection";
 // SEO data for home page
 const homepageSEO = {
   title:
-    "TaxSense Ltd - Expert Tax Consultancy & Accounting Services in Bangladesh",
+    "Taxsense Ltd - Expert Tax Consultancy & Accounting Services in Bangladesh",
   description:
     "Professional tax consultancy firm in Dhaka, Bangladesh. Specializing in VAT, income tax, corporate tax planning, accounting, and business advisory services. Trusted by 500+ clients.",
   canonical: "https://taxsense.com.bd",
   openGraph: {
     title:
-      "TaxSense Ltd - Expert Tax Consultancy & Accounting Services in Bangladesh",
+      "Taxsense Ltd - Expert Tax Consultancy & Accounting Services in Bangladesh",
     description:
       "Professional tax consultancy firm in Dhaka, Bangladesh. Specializing in VAT, income tax, corporate tax planning, accounting, and business advisory services. Trusted by 500+ clients.",
     url: "https://taxsense.com.bd",
@@ -26,7 +26,7 @@ const homepageSEO = {
         url: "https://taxsense.com.bd/taxsense_ltd1.png",
         width: 1200,
         height: 630,
-        alt: "TaxSense Ltd - Professional Tax Consultancy Services",
+        alt: "Taxsense Ltd - Professional Tax Consultancy Services",
       },
     ],
   },
@@ -47,8 +47,8 @@ const homepageSEO = {
 const organizationData = {
   type: "Organization",
   id: "https://taxsense.com.bd",
-  name: "TaxSense Ltd",
-  alternateName: "TaxSense Limited",
+  name: "Taxsense Ltd",
+  alternateName: "Taxsense Limited",
   url: "https://taxsense.com.bd",
   logo: "https://taxsense.com.bd/taxsense_ltd1.png",
   contactPoint: [

@@ -26,9 +26,9 @@ async function testEmail() {
   console.log('2. Sending test email to both addresses...');
   try {
     const mailOptions = {
-      from: '"TaxSense Test" <taxsenseweb@gmail.com>',
+      from: '"Taxsense Test" <taxsenseweb@gmail.com>',
       to: 'taxsenselimited@gmail.com',
-      subject: 'Test Email - TaxSense Contact Form',
+      subject: 'Test Email - Taxsense Contact Form',
       html: `
         <h2>Test Email</h2>
         <p>This is a test email to verify the contact form configuration.</p>

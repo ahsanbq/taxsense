@@ -40,11 +40,11 @@ const Navbar = () => {
             <Link
               href="/"
               className="flex-shrink-0 flex items-center"
-              aria-label="TaxSense Ltd Home"
+              aria-label="Taxsense Ltd Home"
             >
               <img
                 src="/taxsense_ltd1.png"
-                alt="TaxSense Ltd - Professional Tax Consultancy Services"
+                alt="Taxsense Ltd - Professional Tax Consultancy Services"
                 className="h-10 w-auto scale-125"
                 width="120"
                 height="40"

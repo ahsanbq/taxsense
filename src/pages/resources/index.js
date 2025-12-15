@@ -335,12 +335,12 @@ export default function Resources() {
   return (
     <Layout>
       <NextSeo
-        title="Resources - Tax Guides, Templates & Checklists | TaxSense Ltd"
+        title="Resources - Tax Guides, Templates & Checklists | Taxsense Ltd"
         description="Free tax guides, business templates, compliance checklists, and resources for businesses in Bangladesh. Expert insights on VAT, company registration, and more."
         canonical="https://taxsense.com.bd/resources"
         openGraph={{
           url: "https://taxsense.com.bd/resources",
-          title: "Resources - Tax Guides & Templates | TaxSense Ltd",
+          title: "Resources - Tax Guides & Templates | Taxsense Ltd",
           description:
             "Free tax guides, business templates, and compliance resources for Bangladesh businesses.",
           images: [
@@ -348,10 +348,10 @@ export default function Resources() {
               url: "https://taxsense.com.bd/og-resources.jpg",
               width: 1200,
               height: 630,
-              alt: "TaxSense Ltd Resources",
+              alt: "Taxsense Ltd Resources",
             },
           ],
-          site_name: "TaxSense Ltd",
+          site_name: "Taxsense Ltd",
         }}
       />
 

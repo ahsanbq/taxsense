@@ -231,7 +231,7 @@ export default async function handler(req, res) {
           </div>
           
           <div class="footer">
-            <p><strong>TaxSense Limited</strong></p>
+            <p><strong>Taxsense Limited</strong></p>
             <p>Professional Tax Consultancy Services</p>
             <p style="margin-top: 10px; font-size: 12px;">
               Level-8, House No: 5A, Road No: 2E, Block-J, Baridhara R/A, Dhaka-1206
@@ -321,7 +321,7 @@ export default async function handler(req, res) {
           <div class="content">
             <h2>Dear ${firstName} ${lastName},</h2>
             
-            <p>Thank you for reaching out to <strong>TaxSense Limited</strong>. We have successfully received your inquiry regarding <strong>${subject}</strong>.</p>
+            <p>Thank you for reaching out to <strong>Taxsense Limited</strong>. We have successfully received your inquiry regarding <strong>${subject}</strong>.</p>
             
             <div class="highlight-box">
               <p style="margin: 0;"><strong>📧 Your message:</strong></p>
@@ -334,7 +334,7 @@ export default async function handler(req, res) {
               <p><strong>📞 Need immediate assistance?</strong></p>
               <p>Phone: <a href="tel:01958089808" style="color: #700000; text-decoration: none;">01958-089808</a></p>
               <p>Email: <a href="mailto:taxsenselimited@gmail.com" style="color: #700000; text-decoration: none;">taxsenselimited@gmail.com</a></p>
-              <p>Website: <a href="https://www.taxsenselimited.com" style="color: #700000; text-decoration: none;">www.taxsenselimited.com</a></p>
+              <p>Website: <a href="https://www.taxsenselimited.com/" style="color: #700000; text-decoration: none;">https://www.taxsenselimited.com/</a></p>
               
               <p style="margin-top: 20px;"><strong>🏢 Office Address:</strong></p>
               <p>Level-8, House No: 5A, Road No: 2E, Block-J<br>Baridhara R/A, Dhaka-1206, Bangladesh</p>
@@ -345,7 +345,7 @@ export default async function handler(req, res) {
           </div>
           
           <div class="footer">
-            <p><strong>TaxSense Limited</strong></p>
+            <p><strong>Taxsense Limited</strong></p>
             <p>Professional Tax Consultancy & Business Services</p>
             <div class="social-links">
               <p style="margin-bottom: 10px;">Connect with us:</p>
@@ -366,7 +366,7 @@ export default async function handler(req, res) {
     
     // Send email to company addresses
     const companyMailOptions = {
-      from: `"TaxSense Contact Form" <${emailFrom}>`,
+      from: `"Taxsense Contact Form" <${emailFrom}>`,
       to: emailTo,
       subject: `New Contact Form: ${subject} - ${firstName} ${lastName}`,
       html: companyEmailHtml,
@@ -375,9 +375,9 @@ export default async function handler(req, res) {
     
     // Send auto-reply to customer
     const customerMailOptions = {
-      from: `"TaxSense Limited" <${emailFrom}>`,
+      from: `"Taxsense Limited" <${emailFrom}>`,
       to: email,
-      subject: 'Thank You for Contacting TaxSense Limited',
+      subject: 'Thank You for Contacting Taxsense Limited',
       html: customerEmailHtml,
     };
     

@@ -151,12 +151,12 @@ export default function Contact() {
         }}
       />
       <NextSeo
-        title="Contact Us - Get in Touch with TaxSense Ltd"
-        description="Contact TaxSense Ltd for expert tax advisory, VAT consultancy, and business services in Bangladesh. Reach out to our team for professional assistance."
+        title="Contact Us - Get in Touch with Taxsense Ltd"
+        description="Contact Taxsense Ltd for expert tax advisory, VAT consultancy, and business services in Bangladesh. Reach out to our team for professional assistance."
         canonical="https://taxsense.com.bd/contact"
         openGraph={{
           url: "https://taxsense.com.bd/contact",
-          title: "Contact Us - TaxSense Ltd",
+          title: "Contact Us - Taxsense Ltd",
           description:
             "Get in touch with our expert team for tax advisory and business services in Bangladesh.",
           images: [
@@ -164,10 +164,10 @@ export default function Contact() {
               url: "https://taxsense.com.bd/og-contact.jpg",
               width: 1200,
               height: 630,
-              alt: "Contact TaxSense Ltd",
+              alt: "Contact Taxsense Ltd",
             },
           ],
-          site_name: "TaxSense Ltd",
+          site_name: "Taxsense Ltd",
         }}
       />
 
@@ -695,7 +695,7 @@ export default function Contact() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="TaxSense Ltd Office Location"
+              title="Taxsense Ltd Office Location"
             ></iframe>
           </div>
           <div className="mt-6 text-center">

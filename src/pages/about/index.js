@@ -39,7 +39,7 @@ export default function About() {
               <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
                 <p>
                   Founded with a vision to simplify tax compliance and financial
-                  management for businesses, TaxSense Ltd has been at the
+                  management for businesses, Taxsense Ltd has been at the
                   forefront of providing comprehensive tax consultancy services
                   in Bangladesh.
                 </p>
@@ -99,7 +99,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#700000]/20 to-[#A61E2A]/20"></div>
               <Image
                 src="/Hero/hero.png"
-                alt="TaxSense Ltd Office - Professional Tax Consultancy Services"
+                alt="Taxsense Ltd Office - Professional Tax Consultancy Services"
                 fill
                 className="object-cover"
                 priority

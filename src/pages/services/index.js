@@ -154,7 +154,7 @@ const ServiceCard = ({ service, index, imageUrl, getServiceSlug }) => {
       <div className="relative h-48 overflow-hidden">
         <Image
           src={imageUrl}
-          alt={`${service.title} - TaxSense Ltd Professional Services`}
+          alt={`${service.title} - Taxsense Ltd Professional Services`}
           width={400}
           height={300}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -313,12 +313,12 @@ export default function Services() {
   return (
     <Layout>
       <NextSeo
-        title="Our Services - TaxSense Ltd"
+        title="Our Services - Taxsense Ltd"
         description="Comprehensive tax advisory, VAT consultancy, company registration, and business services in Bangladesh. Expert solutions for your business needs."
         canonical="https://taxsense.com.bd/services"
         openGraph={{
           url: "https://taxsense.com.bd/services",
-          title: "Our Services - TaxSense Ltd",
+          title: "Our Services - Taxsense Ltd",
           description:
             "Comprehensive tax advisory, VAT consultancy, company registration, and business services in Bangladesh.",
           images: [
@@ -326,10 +326,10 @@ export default function Services() {
               url: "https://taxsense.com.bd/og-services.jpg",
               width: 1200,
               height: 630,
-              alt: "TaxSense Ltd Services",
+              alt: "Taxsense Ltd Services",
             },
           ],
-          site_name: "TaxSense Ltd",
+          site_name: "Taxsense Ltd",
         }}
       />
 

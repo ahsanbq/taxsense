@@ -187,7 +187,7 @@ export default function Media() {
       id: 1,
       category: "news",
       type: "article",
-      title: "TaxSense Ltd Expands Services to Include Digital Tax Solutions",
+      title: "Taxsense Ltd Expands Services to Include Digital Tax Solutions",
       description:
         "We're excited to announce the launch of our new digital tax filing platform, making it easier than ever for businesses to manage their tax compliance online.",
       thumbnail:
@@ -230,9 +230,9 @@ export default function Media() {
       id: 4,
       category: "press",
       type: "article",
-      title: "TaxSense Ltd Achieves ISO 9001:2015 Certification",
+      title: "Taxsense Ltd Achieves ISO 9001:2015 Certification",
       description:
-        "We are proud to announce that TaxSense Ltd has been awarded ISO 9001:2015 certification, reinforcing our commitment to quality service delivery.",
+        "We are proud to announce that Taxsense Ltd has been awarded ISO 9001:2015 certification, reinforcing our commitment to quality service delivery.",
       thumbnail:
         "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
       date: "Nov 18, 2025",
@@ -302,7 +302,7 @@ export default function Media() {
       id: 9,
       category: "press",
       type: "article",
-      title: "TaxSense Ltd Partners with Leading Accounting Software Provider",
+      title: "Taxsense Ltd Partners with Leading Accounting Software Provider",
       description:
         "Strategic partnership announcement to integrate advanced accounting software solutions with our tax advisory services.",
       thumbnail:
@@ -332,7 +332,7 @@ export default function Media() {
       type: "video",
       title: "Client Success Story: From Startup to Profitable Business",
       description:
-        "Hear from one of our clients about their journey from startup to a profitable business and how TaxSense helped them navigate tax complexities.",
+        "Hear from one of our clients about their journey from startup to a profitable business and how Taxsense helped them navigate tax complexities.",
       thumbnail:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
       date: "Oct 25, 2025",
@@ -365,23 +365,23 @@ export default function Media() {
   return (
     <Layout>
       <NextSeo
-        title="Media & News - Latest Updates, Videos & Events | TaxSense Ltd"
-        description="Stay updated with the latest news, videos, events, and press releases from TaxSense Ltd. Expert insights on tax, business, and compliance in Bangladesh."
+        title="Media & News - Latest Updates, Videos & Events | Taxsense Ltd"
+        description="Stay updated with the latest news, videos, events, and press releases from Taxsense Ltd. Expert insights on tax, business, and compliance in Bangladesh."
         canonical="https://taxsense.com.bd/media"
         openGraph={{
           url: "https://taxsense.com.bd/media",
-          title: "Media & News - Latest Updates | TaxSense Ltd",
+          title: "Media & News - Latest Updates | Taxsense Ltd",
           description:
-            "Latest news, videos, events, and press releases from TaxSense Ltd - your trusted tax advisory partner in Bangladesh.",
+            "Latest news, videos, events, and press releases from Taxsense Ltd - your trusted tax advisory partner in Bangladesh.",
           images: [
             {
               url: "https://taxsense.com.bd/og-media.jpg",
               width: 1200,
               height: 630,
-              alt: "TaxSense Ltd Media Center",
+              alt: "Taxsense Ltd Media Center",
             },
           ],
-          site_name: "TaxSense Ltd",
+          site_name: "Taxsense Ltd",
         }}
       />
 
@@ -397,7 +397,7 @@ export default function Media() {
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
             Stay informed with the latest updates, insights, and stories from
-            TaxSense Ltd
+            Taxsense Ltd
           </p>
         </div>
       </section>

@@ -1,13 +1,13 @@
 const defaultSEO = {
-  title: "TaxSense Ltd - Professional Tax Consultancy Services in Bangladesh",
+  title: "Taxsense Ltd - Professional Tax Consultancy Services in Bangladesh",
   description:
     "Leading tax consultancy firm in Bangladesh providing comprehensive tax services, VAT consultation, accounting solutions, and business advisory services. Expert tax consultants in Dhaka.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://taxsense.com.bd",
-    siteName: "TaxSense Ltd",
-    title: "TaxSense Ltd - Professional Tax Consultancy Services in Bangladesh",
+    siteName: "Taxsense Ltd",
+    title: "Taxsense Ltd - Professional Tax Consultancy Services in Bangladesh",
     description:
       "Leading tax consultancy firm in Bangladesh providing comprehensive tax services, VAT consultation, accounting solutions, and business advisory services. Expert tax consultants in Dhaka.",
     images: [
@@ -15,7 +15,7 @@ const defaultSEO = {
         url: "/public/taxsense_ltd1.png",
         width: 1200,
         height: 630,
-        alt: "TaxSense Ltd - Professional Tax Consultancy",
+        alt: "Taxsense Ltd - Professional Tax Consultancy",
         type: "image/png",
       },
     ],
@@ -49,7 +49,7 @@ const defaultSEO = {
     },
     {
       name: "author",
-      content: "TaxSense Ltd",
+      content: "Taxsense Ltd",
     },
     {
       name: "geo.region",
