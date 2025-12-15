@@ -2,6 +2,7 @@ import { NextSeo } from "next-seo";
 import Layout from "../../components/layout/Layout";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -12,12 +13,105 @@ export default function Contact() {
     phone: "",
     subject: "",
     message: "",
+    honeypot: "", // Anti-spam honeypot field
   });
+  const [submissionTime] = useState(Date.now()); // Track when form was loaded
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    // Show loading toast
+    const loadingToast = toast.loading("Sending your message...", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+        padding: "16px",
+      },
+    });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          submissionTime,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Dismiss loading toast and show success
+        toast.success(
+          data.message || "Thank you! We'll get back to you within 24 hours.",
+          {
+            id: loadingToast,
+            duration: 5000,
+            style: {
+              borderRadius: "10px",
+              background: "#10B981",
+              color: "#fff",
+              padding: "16px",
+            },
+            iconTheme: {
+              primary: "#fff",
+              secondary: "#10B981",
+            },
+          }
+        );
+
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          honeypot: "",
+        });
+      } else {
+        // Dismiss loading toast and show error
+        toast.error(data.error || "Something went wrong. Please try again.", {
+          id: loadingToast,
+          duration: 5000,
+          style: {
+            borderRadius: "10px",
+            background: "#EF4444",
+            color: "#fff",
+            padding: "16px",
+          },
+          iconTheme: {
+            primary: "#fff",
+            secondary: "#EF4444",
+          },
+        });
+      }
+    } catch (error) {
+      // Dismiss loading toast and show error
+      toast.error(
+        "Failed to send message. Please try again or contact us directly.",
+        {
+          id: loadingToast,
+          duration: 5000,
+          style: {
+            borderRadius: "10px",
+            background: "#EF4444",
+            color: "#fff",
+            padding: "16px",
+          },
+        }
+      );
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -29,6 +123,33 @@ export default function Contact() {
 
   return (
     <Layout>
+      {/* Toast Notifications Container */}
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+          success: {
+            duration: 5000,
+            iconTheme: {
+              primary: "#10B981",
+              secondary: "#fff",
+            },
+          },
+          error: {
+            duration: 5000,
+            iconTheme: {
+              primary: "#EF4444",
+              secondary: "#fff",
+            },
+          },
+        }}
+      />
       <NextSeo
         title="Contact Us - Get in Touch with TaxSense Ltd"
         description="Contact TaxSense Ltd for expert tax advisory, VAT consultancy, and business services in Bangladesh. Reach out to our team for professional assistance."
@@ -85,6 +206,20 @@ export default function Contact() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field - hidden from users */}
+                <div style={{ position: "absolute", left: "-5000px", opacity: 0, pointerEvents: "none" }} aria-hidden="true">
+                  <input
+                    type="text"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={handleChange}
+                    tabIndex="-1"
+                    autoComplete="new-password"
+                    placeholder=""
+                    readOnly
+                    onFocus={(e) => e.target.blur()}
+                  />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -183,12 +318,16 @@ export default function Contact() {
                     <option value="company-registration">
                       Company Registration
                     </option>
-                    <option value="trade-license">
-                      Trade License & Trademark
+                    <option value="trade-license">Trade License</option>
+                    <option value="trademark-registration">
+                      Trademark Registration
                     </option>
-                    <option value="accounting">Accounting Services</option>
+                    <option value="irc-erc">IRC & ERC Services</option>
+                    <option value="accounting-service">
+                      Accounting Service & Software
+                    </option>
                     <option value="business-audit">Business Audit</option>
-                    <option value="other">Other</option>
+                    <option value="other-services">Other Services</option>
                   </select>
                 </div>
 
@@ -213,22 +352,55 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#700000] hover:bg-[#8b1f1f] text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center group"
+                  disabled={isSubmitting}
+                  className={`w-full cursor-pointer py-4 px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center group ${
+                    isSubmitting
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-[#700000] hover:bg-[#8b1f1f] text-white"
+                  }`}
                 >
-                  Send Message
-                  <svg
-                    className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  {isSubmitting ? (
+                    <>
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <svg
+                        className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
