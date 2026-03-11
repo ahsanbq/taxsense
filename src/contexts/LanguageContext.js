@@ -20,7 +20,7 @@ export const translations = {
       title: "Professional Tax & Business Solutions",
       subtitle: "Expert guidance for your financial success",
       description:
-        "Comprehensive tax advisory, VAT consultancy, Company Documentation and business solutions tailored to meet your specific needs. Trust our experienced professionals to handle your financial requirements.",
+        "Comprehensivesdfsdfsdfsdfsdfssory, VAT consultancy, Company Documentation and business solutions tailored to meet your specific needs. Trust our experienced professionals to handle your financial requirements.",
       cta: "Get Started",
       learnMore: "Learn More",
     },
